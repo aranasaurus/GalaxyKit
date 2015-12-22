@@ -17,6 +17,37 @@ extension UInt64 {
     var uint32Value: UInt32 { return UInt32(self & UInt64(UInt32.max)) }
 }
 
+extension UnsignedIntegerType {
+    var binaryString: String {
+        let s = String(self, radix: 2)
+        var ret = [Character]()
+        var spaces = 0
+        for (i, c) in s.characters.reverse().enumerate() {
+            defer {
+                ret.append(c)
+            }
+            guard i != 0 && (i - s.characters.count) % 4 == 0 else { continue }
+            spaces += 1
+            if spaces == 4 {
+                ret.append(" ")
+                ret.append("-")
+            }
+            ret.append(" ")
+        }
+        while ret.count < 32+9 {
+            ret.insert("0", atIndex: 0)
+        }
+        return String(ret)
+    }
+}
+
+extension Array {
+    func itemWithSeed(i: Int) -> Element {
+        return self[i % count]
+    }
+}
+
+
 struct Seed {
     var coordSeed: UInt32
     var starSeed: UInt32
@@ -57,9 +88,10 @@ struct Coordinate {
     let z: Int32
     
     init(seed: Seed) {
-        self.z = Int32((seed.coordSeed & 0xFF0000) >> 16)
-        self.y = Int32(seed.coordSeed >> 8) / 2
-        self.x = Int32((seed.coordSeed & 0x0001FE) >> 1) / 2
+//        print("Generating Coordinate with seed: \(seed.coordSeed) : \(seed.coordSeed.binaryString)")
+        self.z = Int32((seed.coordSeed & 0xFF0000) >> 16) - 128
+        self.y = Int32((seed.coordSeed & 0x00FF00) >> 8) - 128
+        self.x = Int32(seed.coordSeed & 0x0000FF) - 128
     }
 }
 
@@ -91,8 +123,7 @@ struct Star {
         case ContactBinary
         
         init(seed: Seed) {
-            let chanceIndex = (seed.starSeed >> 16) & 0x1f
-            self.init(rawValue: Classification.chanceTable[Int(chanceIndex)])!
+            self.init(rawValue: Classification.chanceTable.itemWithSeed(Int(seed.starSeed >> 16)))!
         }
     }
     
@@ -112,8 +143,7 @@ struct Star {
         case Sextuple
         
         init(seed: Seed) {
-            let chanceIndex = seed.starSeed & 0x1f
-            self.init(rawValue: MultiType.chanceTable[Int(chanceIndex)])!
+            self.init(rawValue: MultiType.chanceTable.itemWithSeed(Int(seed.starSeed)))!
         }
     }
     
@@ -164,7 +194,6 @@ struct Sector {
         var systems = [System]()
         for _ in 0..<numSystems {
             seed.rotateInPlace()
-            print(seed)
             systems.append(System(seed: seed))
         }
         self.systems = systems
@@ -175,10 +204,16 @@ extension Sector: CustomDebugStringConvertible {
     var debugDescription: String { return "[\(x), \(y)]: \(systems)" }
 }
 
-let s = Sector(23, 50, numSystems: 3)
-s.systems[0]
+let s = Sector(23, 50, numSystems: 64)
 s.systems[1]
 s.systems[2]
+s.systems[10]
+s.systems[15]
+s.systems[26]
+s.systems[53]
+for (i, sys) in s.systems.enumerate() {
+    print("[\(i)] \(sys)")
+}
 
 
 
