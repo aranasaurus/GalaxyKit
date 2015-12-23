@@ -1,11 +1,13 @@
 //: Space Playground - My place to mess around with [this](http://www.jongware.com/galaxy1.html)
 
-import Cocoa
+import XCPlayground
+let page = XCPlaygroundPage.currentPage
+page.needsIndefiniteExecution
 
-let s = Sector(3, 5, numSystems: 6)
-s.systems[1]
-s.systems[2]
+let s = Sector(141, 78, numSystems: 4)
+
 for (i, sys) in s.systems.enumerate() {
-    print("[\(i)] \(sys)")
+    page.captureValue(sys.playgroundLiveViewRepresentation(), withIdentifier: "\(i)")
 }
 
+page.finishExecution()
