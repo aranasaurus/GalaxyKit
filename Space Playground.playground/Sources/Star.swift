@@ -1,7 +1,7 @@
 import UIKit
 import XCPlayground
 
-public typealias Kelvin = Int
+public typealias Kelvin = Double
 
 /**
  Standard unit of mass in astronomy indicating the mass of other stars, as well as clusters, nebulae and galaxies. 
@@ -44,7 +44,7 @@ public struct Star {
         var tempRange: (min: Kelvin, max: Kelvin) {
             switch self {
             case .O:
-                return (min: 30000, max: Kelvin.max)
+                return (min: 30000, max: 52000)
             case .B:
                 return (min: 10000, max: 30000)
             case .A:
@@ -67,7 +67,7 @@ public struct Star {
         var massRange: (min: SolarMass, max: SolarMass) {
             switch self {
             case .O:
-                return (min: 16, max: SolarMass.infinity)
+                return (min: 16, max: 90)
             case .B:
                 return (min: 2.1, max: 16)
             case .A:
@@ -90,7 +90,7 @@ public struct Star {
         var radiusRange: (min: SolarRadius, max: SolarRadius) {
             switch self {
             case .O:
-                return (min: 6.6, max: SolarRadius.infinity)
+                return (min: 6.6, max: 76)
             case .B:
                 return (min: 1.8, max: 6.6)
             case .A:
@@ -113,7 +113,7 @@ public struct Star {
         var luminosityRange: (min: SolarLuminosity, max: SolarLuminosity) {
             switch self {
             case .O:
-                return (min: 30000, max: SolarLuminosity.infinity)
+                return (min: 30000, max: 1000000)
             case .B:
                 return (min: 25, max: 30000)
             case .A:
@@ -182,22 +182,33 @@ public struct Star {
         }
     }
     
-    public var classification: Classification { return Classification(percentile: classificationPercentile) }
-    public var subclass: Int { return abs(Int(attributesPercentile * 100) / 10 - 9) }
-    public var temperature: Kelvin { return classification.temperature(attributesPercentile) }
-    public var mass: SolarMass { return classification.mass(attributesPercentile) }
-    public var radius: SolarRadius { return classification.radius(attributesPercentile) }
-    public var luminosity: SolarLuminosity { return classification.luminosity(attributesPercentile) }
+    public var classification: Classification
+    public var subclass: Int
+    public var temperature: Kelvin
+    public var mass: SolarMass
+    public var radius: SolarRadius
+    public var luminosity: SolarLuminosity
     
-    // TODO: This should change based on percentile as well
-    public var color: UIColor { return classification.color(attributesPercentile) }
-    
-    private let classificationPercentile: Double
-    private let attributesPercentile: Double
+    public var color: UIColor { return classification.color(temperature / classification.tempRange.max) }
     
     public init(seed: Seed) {
-        self.classificationPercentile = Double(seed.starSeed) / Double(UInt32.max)
-        self.attributesPercentile = Double(seed.rotate().starSeed) / Double(UInt32.max)
+        let classificationPercentile = Double(seed.starSeed) / Double(UInt32.max)
+        let attributesPercentile = Double(seed.rotate().starSeed) / Double(UInt32.max)
+        self.classification = Classification(percentile: classificationPercentile)
+        self.subclass = abs(Int(attributesPercentile * 100) / 10 - 9)
+        self.temperature = classification.temperature(attributesPercentile)
+        self.mass = classification.mass(attributesPercentile)
+        self.radius = classification.radius(attributesPercentile)
+        self.luminosity = classification.luminosity(attributesPercentile)
+    }
+    
+    public init(classification: Classification, subclass: Int, temperature: Kelvin, mass: SolarMass, radius: SolarRadius, luminosity: SolarLuminosity) {
+        self.classification = classification
+        self.subclass = subclass
+        self.temperature = temperature
+        self.mass = mass
+        self.radius = radius
+        self.luminosity = luminosity
     }
 }
 
@@ -208,6 +219,6 @@ extension Star: CustomStringConvertible {
 }
 
 extension Star: CustomDebugStringConvertible {
-    public var debugDescription: String { return "class: \(classification)\(subclass), temp: \(temperature), mass: \(mass), rad: \(radius), luminosity: \(luminosity), percentiles: [\(classificationPercentile), \(attributesPercentile)]" }
+    public var debugDescription: String { return "class: \(classification)\(subclass), temp: \(temperature), mass: \(mass), rad: \(radius), luminosity: \(luminosity)" }
 }
 

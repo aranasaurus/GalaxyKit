@@ -9,6 +9,11 @@ public struct System {
         self.coordinate = Coordinate(seed: seed)
         self.star = Star(seed: seed)
     }
+    
+    public init(star: Star, coordinate: Coordinate) {
+        self.coordinate = coordinate
+        self.star = star
+    }
 }
 
 extension System: CustomStringConvertible {

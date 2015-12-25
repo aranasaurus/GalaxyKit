@@ -4,10 +4,15 @@ public struct Coordinate {
     public let z: Int32
     
     public init(seed: Seed) {
-//        print("Generating Coordinate with seed: \(seed.coordSeed) : \(seed.coordSeed.binaryString)")
         self.z = Int32((seed.coordSeed & 0xFF0000) >> 16) - 128
         self.y = Int32((seed.coordSeed & 0x00FF00) >> 8) - 128
         self.x = Int32(seed.coordSeed & 0x0000FF) - 128
+    }
+    
+    public init(x: Int32, y: Int32, z:Int32) {
+        self.x = x
+        self.y = y
+        self.z = z
     }
 }
 
