@@ -183,6 +183,7 @@ public struct Star {
     }
     
     public var classification: Classification { return Classification(percentile: classificationPercentile) }
+    public var subclass: Int { return abs(Int(attributesPercentile * 100) / 10 - 9) }
     public var temperature: Kelvin { return classification.temperature(attributesPercentile) }
     public var mass: SolarMass { return classification.mass(attributesPercentile) }
     public var radius: SolarRadius { return classification.radius(attributesPercentile) }
@@ -201,10 +202,12 @@ public struct Star {
 }
 
 extension Star: CustomStringConvertible {
-    public var description: String { return "\(classification)" }
+    public var description: String {
+        return "\(classification)\(subclass)"
+    }
 }
 
 extension Star: CustomDebugStringConvertible {
-    public var debugDescription: String { return "class: \(classification), temp: \(temperature), mass: \(mass), rad: \(radius), luminosity: \(luminosity), percentiles: [\(classificationPercentile), \(attributesPercentile)]" }
+    public var debugDescription: String { return "class: \(classification)\(subclass), temp: \(temperature), mass: \(mass), rad: \(radius), luminosity: \(luminosity), percentiles: [\(classificationPercentile), \(attributesPercentile)]" }
 }
 

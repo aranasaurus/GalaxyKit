@@ -4,10 +4,9 @@ import XCPlayground
 let page = XCPlaygroundPage.currentPage
 page.needsIndefiniteExecution = true
 
-let s = Sector(6, 24, numSystems: 15)
 
 for (i, sys) in s.systems.enumerate() {
     print("[\(i)]: " + sys.debugDescription)
 }
 
-page.liveView = s.systems[2]
+page.liveView = s.systems[14]
