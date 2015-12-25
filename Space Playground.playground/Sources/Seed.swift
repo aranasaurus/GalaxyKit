@@ -1,3 +1,5 @@
+// TODO: This is cool and all, was fun to make... but really I should just be farming this off to arc4rand or the RNG stuff in GameplayKit.
+
 public struct Seed {
     public var coordSeed: UInt32
     public var starSeed: UInt32

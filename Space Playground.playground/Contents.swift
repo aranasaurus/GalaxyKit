@@ -2,12 +2,12 @@
 
 import XCPlayground
 let page = XCPlaygroundPage.currentPage
-page.needsIndefiniteExecution
+page.needsIndefiniteExecution = true
 
-let s = Sector(141, 78, numSystems: 4)
+let s = Sector(6, 24, numSystems: 15)
 
 for (i, sys) in s.systems.enumerate() {
-    page.captureValue(sys.playgroundLiveViewRepresentation(), withIdentifier: "\(i)")
+    print("[\(i)]: " + sys.debugDescription)
 }
 
-page.finishExecution()
+page.liveView = s.systems[2]
