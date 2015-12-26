@@ -1,5 +1,4 @@
 import UIKit
-import XCPlayground
 
 public typealias Kelvin = Double
 

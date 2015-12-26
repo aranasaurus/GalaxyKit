@@ -1,7 +1,7 @@
 public struct Sector {
     public let x: UInt32
     public let y: UInt32
-    public let systems: [System]
+    public let systems: Array<System>
     
     public init(_ x: UInt32, _ y: UInt32, numSystems: UInt8) {
         self.x = x
