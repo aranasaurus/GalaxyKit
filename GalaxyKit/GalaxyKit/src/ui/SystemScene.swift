@@ -16,18 +16,14 @@ public extension System {
     
     public class Scene: SCNScene {
         public let system: System
-        private var sphere: SCNSphere
         
         public init(system: System) {
-            self.sphere = SCNSphere(radius: system.star.normalizedRadius)
-            sphere.firstMaterial?.diffuse.contents = system.star.color
-            sphere.radius = system.star.normalizedRadius
             self.system = system
-            
-            let node = SCNNode(geometry: sphere)
             
             super.init()
             
+            let geom = Star.Geometry(star: system.star)
+            let node = SCNNode(geometry: geom)
             rootNode.addChildNode(node)
         }
 

@@ -12,6 +12,7 @@
 		946ED5891C2E33F3004E03A3 /* GalaxyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 946ED5881C2E33F3004E03A3 /* GalaxyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		946ED5901C2E33F3004E03A3 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */; };
 		946ED5951C2E33F3004E03A3 /* GalaxyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */; };
+		9489CB2E1C31DF070016E32B /* StarGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489CB2D1C31DF070016E32B /* StarGeometry.swift */; };
 		94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840311C2E34BF007196E6 /* Coordinate.swift */; };
 		94E840381C2E34BF007196E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840321C2E34BF007196E6 /* Extensions.swift */; };
 		94E840391C2E34BF007196E6 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840331C2E34BF007196E6 /* Sector.swift */; };
@@ -39,6 +40,7 @@
 		946ED58F1C2E33F3004E03A3 /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalaxyKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
 		946ED5961C2E33F3004E03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9489CB2D1C31DF070016E32B /* StarGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarGeometry.swift; sourceTree = "<group>"; };
 		94D54D261C2E396300B51956 /* sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = sandbox.playground; path = ../sandbox.playground; sourceTree = "<group>"; };
 		94E840311C2E34BF007196E6 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		94E840321C2E34BF007196E6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		9477F4501C2E40F8006F004B /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9489CB2F1C31E49D0016E32B /* geometry */,
 				944F746A1C31081800C4DA8B /* SystemScene.swift */,
 			);
 			name = ui;
@@ -133,6 +136,14 @@
 			);
 			name = util;
 			path = src/util;
+			sourceTree = "<group>";
+		};
+		9489CB2F1C31E49D0016E32B /* geometry */ = {
+			isa = PBXGroup;
+			children = (
+				9489CB2D1C31DF070016E32B /* StarGeometry.swift */,
+			);
+			path = geometry;
 			sourceTree = "<group>";
 		};
 		94E8403D1C2E356D007196E6 /* src */ = {
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */,
+				9489CB2E1C31DF070016E32B /* StarGeometry.swift in Sources */,
 				944F746B1C31081800C4DA8B /* SystemScene.swift in Sources */,
 				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94E8403A1C2E34BF007196E6 /* Seed.swift in Sources */,
