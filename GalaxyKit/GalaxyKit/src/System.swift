@@ -1,5 +1,3 @@
-import UIKit
-
 public struct System {
     public let star: Star
     public let coordinate: Coordinate

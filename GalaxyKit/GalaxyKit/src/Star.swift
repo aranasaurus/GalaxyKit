@@ -186,6 +186,11 @@ public struct Star {
     public var temperature: Kelvin
     public var mass: SolarMass
     public var radius: SolarRadius
+    public var normalizedRadius: CGFloat {
+        let variableDistance = classification.radiusRange.max - classification.radiusRange.min
+        let midRadius = classification.radiusRange.min + (variableDistance / 2)
+        return CGFloat(midRadius / radius)
+    }
     public var luminosity: SolarLuminosity
     
     public var color: UIColor { return classification.color(temperature / classification.tempRange.max) }

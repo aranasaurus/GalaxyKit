@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94045DD41C313FA90063C994 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94045DD31C313FA90063C994 /* GalaxyKit.framework */; };
+		94045DD51C31400E0063C994 /* GalaxyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94045DD31C313FA90063C994 /* GalaxyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944F74541C31071500C4DA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74531C31071500C4DA8B /* AppDelegate.swift */; };
+		944F74561C31071500C4DA8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74551C31071500C4DA8B /* ViewController.swift */; };
+		944F74591C31071500C4DA8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F74571C31071500C4DA8B /* Main.storyboard */; };
+		944F745B1C31071500C4DA8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F745A1C31071500C4DA8B /* Assets.xcassets */; };
+		944F745E1C31071500C4DA8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F745C1C31071500C4DA8B /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94045DD21C313A1D0063C994 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				94045DD51C31400E0063C994 /* GalaxyKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		94045DC31C3133A40063C994 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		94045DD31C313FA90063C994 /* GalaxyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GalaxyKit.framework; path = "../Build/Products/Debug-iphoneos/GalaxyKit.framework"; sourceTree = "<group>"; };
+		944F74501C31071500C4DA8B /* Galaxy Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galaxy Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		944F74531C31071500C4DA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		944F74551C31071500C4DA8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		944F74581C31071500C4DA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		944F745A1C31071500C4DA8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		944F745D1C31071500C4DA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		944F745F1C31071500C4DA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		944F744D1C31071500C4DA8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94045DD41C313FA90063C994 /* GalaxyKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		944F74471C31071500C4DA8B = {
+			isa = PBXGroup;
+			children = (
+				944F74691C31074B00C4DA8B /* Frameworks */,
+				944F74521C31071500C4DA8B /* Galaxy Machine */,
+				944F74511C31071500C4DA8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		944F74511C31071500C4DA8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				944F74501C31071500C4DA8B /* Galaxy Machine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		944F74521C31071500C4DA8B /* Galaxy Machine */ = {
+			isa = PBXGroup;
+			children = (
+				944F74531C31071500C4DA8B /* AppDelegate.swift */,
+				944F74551C31071500C4DA8B /* ViewController.swift */,
+				944F74571C31071500C4DA8B /* Main.storyboard */,
+				944F745A1C31071500C4DA8B /* Assets.xcassets */,
+				944F745C1C31071500C4DA8B /* LaunchScreen.storyboard */,
+				944F745F1C31071500C4DA8B /* Info.plist */,
+			);
+			path = "Galaxy Machine";
+			sourceTree = "<group>";
+		};
+		944F74691C31074B00C4DA8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94045DD31C313FA90063C994 /* GalaxyKit.framework */,
+				94045DC31C3133A40063C994 /* SceneKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		944F744F1C31071500C4DA8B /* Galaxy Machine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 944F74621C31071500C4DA8B /* Build configuration list for PBXNativeTarget "Galaxy Machine" */;
+			buildPhases = (
+				944F744C1C31071500C4DA8B /* Sources */,
+				944F744D1C31071500C4DA8B /* Frameworks */,
+				944F744E1C31071500C4DA8B /* Resources */,
+				94045DD21C313A1D0063C994 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Galaxy Machine";
+			productName = "Galaxy Machine";
+			productReference = 944F74501C31071500C4DA8B /* Galaxy Machine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		944F74481C31071500C4DA8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Aranasaurus;
+				TargetAttributes = {
+					944F744F1C31071500C4DA8B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 944F744B1C31071500C4DA8B /* Build configuration list for PBXProject "Galaxy Machine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 944F74471C31071500C4DA8B;
+			productRefGroup = 944F74511C31071500C4DA8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				944F744F1C31071500C4DA8B /* Galaxy Machine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		944F744E1C31071500C4DA8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944F745E1C31071500C4DA8B /* LaunchScreen.storyboard in Resources */,
+				944F745B1C31071500C4DA8B /* Assets.xcassets in Resources */,
+				944F74591C31071500C4DA8B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		944F744C1C31071500C4DA8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944F74561C31071500C4DA8B /* ViewController.swift in Sources */,
+				944F74541C31071500C4DA8B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		944F74571C31071500C4DA8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944F74581C31071500C4DA8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		944F745C1C31071500C4DA8B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				944F745D1C31071500C4DA8B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		944F74601C31071500C4DA8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		944F74611C31071500C4DA8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		944F74631C31071500C4DA8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/src/github/aranasaurus/space-playground/GalaxyKit/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "Galaxy Machine/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aranasaurus.Galaxy-Machine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		944F74641C31071500C4DA8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/src/github/aranasaurus/space-playground/GalaxyKit/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = "Galaxy Machine/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aranasaurus.Galaxy-Machine";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		944F744B1C31071500C4DA8B /* Build configuration list for PBXProject "Galaxy Machine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				944F74601C31071500C4DA8B /* Debug */,
+				944F74611C31071500C4DA8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		944F74621C31071500C4DA8B /* Build configuration list for PBXNativeTarget "Galaxy Machine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				944F74631C31071500C4DA8B /* Debug */,
+				944F74641C31071500C4DA8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 944F74481C31071500C4DA8B /* Project object */;
+}

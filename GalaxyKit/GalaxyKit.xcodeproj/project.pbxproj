@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		944F746B1C31081800C4DA8B /* SystemScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F746A1C31081800C4DA8B /* SystemScene.swift */; };
+		944F746D1C31082E00C4DA8B /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F746C1C31082E00C4DA8B /* SceneKit.framework */; };
 		946ED5891C2E33F3004E03A3 /* GalaxyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 946ED5881C2E33F3004E03A3 /* GalaxyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		946ED5901C2E33F3004E03A3 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */; };
 		946ED5951C2E33F3004E03A3 /* GalaxyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */; };
-		9477F4521C2E4128006F004B /* SystemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477F4511C2E4128006F004B /* SystemView.swift */; };
 		94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840311C2E34BF007196E6 /* Coordinate.swift */; };
 		94E840381C2E34BF007196E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840321C2E34BF007196E6 /* Extensions.swift */; };
 		94E840391C2E34BF007196E6 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840331C2E34BF007196E6 /* Sector.swift */; };
@@ -30,13 +31,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		944F746A1C31081800C4DA8B /* SystemScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemScene.swift; sourceTree = "<group>"; };
+		944F746C1C31082E00C4DA8B /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GalaxyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		946ED5881C2E33F3004E03A3 /* GalaxyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalaxyKit.h; sourceTree = "<group>"; };
 		946ED58A1C2E33F3004E03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		946ED58F1C2E33F3004E03A3 /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GalaxyKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
 		946ED5961C2E33F3004E03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9477F4511C2E4128006F004B /* SystemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemView.swift; sourceTree = "<group>"; };
 		94D54D261C2E396300B51956 /* sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = sandbox.playground; path = ../sandbox.playground; sourceTree = "<group>"; };
 		94E840311C2E34BF007196E6 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		94E840321C2E34BF007196E6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				944F746D1C31082E00C4DA8B /* SceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,12 +68,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		944F746E1C31083500C4DA8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				944F746C1C31082E00C4DA8B /* SceneKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		946ED57B1C2E33F3004E03A3 = {
 			isa = PBXGroup;
 			children = (
 				94D54D261C2E396300B51956 /* sandbox.playground */,
 				946ED5871C2E33F3004E03A3 /* GalaxyKit */,
 				946ED5931C2E33F3004E03A3 /* GalaxyKitTests */,
+				944F746E1C31083500C4DA8B /* Frameworks */,
 				946ED5861C2E33F3004E03A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,13 +115,13 @@
 			path = GalaxyKitTests;
 			sourceTree = "<group>";
 		};
-		9477F4501C2E40F8006F004B /* views */ = {
+		9477F4501C2E40F8006F004B /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				9477F4511C2E4128006F004B /* SystemView.swift */,
+				944F746A1C31081800C4DA8B /* SystemScene.swift */,
 			);
-			name = views;
-			path = src/views;
+			name = ui;
+			path = src/ui;
 			sourceTree = "<group>";
 		};
 		9477F4531C2E4204006F004B /* util */ = {
@@ -126,11 +138,11 @@
 		94E8403D1C2E356D007196E6 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				9477F4501C2E40F8006F004B /* ui */,
 				9477F4531C2E4204006F004B /* util */,
-				9477F4501C2E40F8006F004B /* views */,
 				94E840331C2E34BF007196E6 /* Sector.swift */,
-				94E840351C2E34BF007196E6 /* Star.swift */,
 				94E840361C2E34BF007196E6 /* System.swift */,
+				94E840351C2E34BF007196E6 /* Star.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -244,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */,
-				9477F4521C2E4128006F004B /* SystemView.swift in Sources */,
+				944F746B1C31081800C4DA8B /* SystemScene.swift in Sources */,
 				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94E8403A1C2E34BF007196E6 /* Seed.swift in Sources */,
 				94E8403B1C2E34BF007196E6 /* Star.swift in Sources */,

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:GalaxyKit/../Galaxy Machine/Galaxy Machine.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:GalaxyKit/GalaxyKit.xcodeproj">
    </FileRef>
 </Workspace>
