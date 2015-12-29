@@ -99,9 +99,9 @@ public struct Star {
             case .G:
                 return (min: 0.96, max: 1.15)
             case .K:
-                return (min: 0.07, max: 0.96)
+                return (min: 0.7, max: 0.96)
             case .M:
-                return (min: 0, max: 0.7)
+                return (min: 0.33, max: 0.7)
             }
         }
         private func radius(percentile: Double) -> SolarRadius {
@@ -124,7 +124,7 @@ public struct Star {
             case .K:
                 return (min: 0.08, max: 0.6)
             case .M:
-                return (min: 0, max: 0.8)
+                return (min: 0.0, max: 0.08)
             }
         }
         private func luminosity(percentile: Double) -> SolarLuminosity {
@@ -188,8 +188,8 @@ public struct Star {
     public var radius: SolarRadius
     public var normalizedRadius: CGFloat {
         let variableDistance = classification.radiusRange.max - classification.radiusRange.min
-        let midRadius = classification.radiusRange.min + (variableDistance / 2)
-        return CGFloat(midRadius / radius)
+        let radiusDistanceFromMin = radius - classification.radiusRange.min
+        return CGFloat(radiusDistanceFromMin / (variableDistance / 2))
     }
     public var luminosity: SolarLuminosity
     

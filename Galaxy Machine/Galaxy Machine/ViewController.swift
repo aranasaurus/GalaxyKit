@@ -12,22 +12,48 @@ import GalaxyKit
 
 class ViewController: UIViewController {
     var sceneView: SCNView! { return view as? SCNView }
-    @IBOutlet var label: UILabel!
+    var sectorScene: Sector.Scene? { return sceneView.scene as? Sector.Scene }
+    @IBOutlet var starLabel: UILabel!
+    @IBOutlet var sectorLabel: UILabel!
     @IBOutlet var temperatureLabel: UILabel!
     @IBOutlet var massLabel: UILabel!
     @IBOutlet var radiusLabel: UILabel!
     
-    let sector = Sector.init(1, 4, numSystems: 8)
+    var sector = Sector.init(1, 4, numSystems: 8) {
+        didSet {
+            guard sector.x != oldValue.x || sector.y != oldValue.y else { return }
+            configureForSector(sector)
+        }
+    }
+    
+    var starDensityTable: [[Int]] {
+        if let table = NSUserDefaults.standardUserDefaults().objectForKey("starDensityTable") as? [[Int]] {
+            return table
+        }
+        var table = [[Int]]()
+        for _ in 0...64 {
+            var row = [Int]()
+            for _ in 0...64 {
+                row.append(Int(arc4random_uniform(24) + 1))
+            }
+            table.append(row)
+        }
+        NSUserDefaults.standardUserDefaults().setObject(table, forKey: "starDensityTable")
+        return table
+    }
+    
     var currentSystemIndex: Int = 0 {
         didSet {
             if currentSystemIndex >= sector.systems.count {
+        currentSystemIndex = 0
+                
                 currentSystemIndex = currentSystemIndex % sector.systems.count
             } else if currentSystemIndex < 0 {
                 currentSystemIndex = sector.systems.count - 1
             }
             
             let currentSystem = sector.systems[currentSystemIndex]
-            label.text = currentSystem.description
+            starLabel.text = currentSystem.description
             
             numberFormatter.minimumSignificantDigits = 6
             
@@ -40,7 +66,7 @@ class ViewController: UIViewController {
             
             radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentSystem.star.radius)!) R☉"
             
-            sceneView.scene = System.Scene(system: currentSystem)
+            self.sectorScene?.focusIndex = currentSystemIndex
             print(currentSystem.debugDescription)
         }
     }
@@ -57,7 +83,14 @@ class ViewController: UIViewController {
         
         sceneView.backgroundColor = .blackColor()
         sceneView.autoenablesDefaultLighting = true
+        sceneView.scene = Sector.Scene(sector: sector)
         
+        configureForSector(sector)
+    }
+    
+    func configureForSector(sector: Sector) {
+        sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.systems.count) systems)"
+        sceneView.scene = Sector.Scene(sector: sector)
         currentSystemIndex = 0
     }
     
@@ -67,6 +100,13 @@ class ViewController: UIViewController {
     
     @IBAction func prevButtonTapped() {
         currentSystemIndex -= 1
+    }
+    
+    @IBAction func changeSectorTapped() {
+        let x = arc4random_uniform(64)
+        let y = arc4random_uniform(64)
+        let numSystems = starDensityTable[Int(x)][Int(y)]
+        sector = Sector.init(x, y, numSystems: UInt8(numSystems))
     }
 }
 

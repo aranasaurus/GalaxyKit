@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -19,10 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EH-LI-7kj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9EH-LI-7kj" userLabel="Star Label">
                                 <rect key="frame" x="52" y="547" width="496" height="33"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
                                 <color key="textColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sector [x, y]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-zX-Rfc" userLabel="Sector Label">
+                                <rect key="frame" x="20" y="20" width="560" height="33"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="28"/>
+                                <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-jv-1tL" userLabel="prev">
@@ -35,24 +41,6 @@
                                     <action selector="prevButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="y3i-C1-UCt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp:" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-nV-It5" userLabel="temperature">
-                                <rect key="frame" x="20" y="20" width="198" height="12"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mass:" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crD-L3-auT" userLabel="mass">
-                                <rect key="frame" x="20" y="36" width="198" height="12"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rad: " textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xms-6z-Bx6" userLabel="radius">
-                                <rect key="frame" x="20" y="52" width="198" height="12"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2j-vt-g6Q" userLabel="next">
                                 <rect key="frame" x="536" y="20" width="64" height="560"/>
                                 <constraints>
@@ -66,26 +54,62 @@
                                     <action selector="nextButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="HSy-Nb-rVI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efF-Yb-dCF">
+                                <rect key="frame" x="246.5" y="52" width="107" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="fB8-be-D6j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="21"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" red="0.58811664581298828" green="0.92043054103851318" blue="0.95765453577041626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeSectorTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZE-mC-Ml5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp:" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Que-nV-It5" userLabel="temperature">
+                                <rect key="frame" x="20" y="61" width="198" height="12"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mass:" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crD-L3-auT" userLabel="mass">
+                                <rect key="frame" x="20" y="77" width="198" height="12"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rad: " textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xms-6z-Bx6" userLabel="radius">
+                                <rect key="frame" x="20" y="93" width="198" height="12"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xms-6z-Bx6" firstAttribute="top" secondItem="crD-L3-auT" secondAttribute="bottom" constant="4" id="5eN-Eg-n2p"/>
+                            <constraint firstItem="efF-Yb-dCF" firstAttribute="centerX" secondItem="tX5-zX-Rfc" secondAttribute="centerX" id="8qj-a9-KQ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tX5-zX-Rfc" secondAttribute="trailing" id="9Rd-N3-Hrw"/>
                             <constraint firstItem="9EH-LI-7kj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B4F-sU-wpU"/>
                             <constraint firstItem="crD-L3-auT" firstAttribute="top" secondItem="Que-nV-It5" secondAttribute="bottom" constant="4" id="D4B-JO-7cV"/>
                             <constraint firstItem="crD-L3-auT" firstAttribute="width" secondItem="Que-nV-It5" secondAttribute="width" id="FBN-8H-V0O"/>
                             <constraint firstItem="9EH-LI-7kj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-104" id="HdP-Nr-7Je"/>
                             <constraint firstAttribute="trailing" secondItem="W2j-vt-g6Q" secondAttribute="trailing" id="J9w-am-4kz"/>
                             <constraint firstItem="Wd6-jv-1tL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RKb-0a-O3L"/>
+                            <constraint firstItem="tX5-zX-Rfc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T6c-Er-TAE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Que-nV-It5" secondAttribute="leading" id="V9F-Ny-81I"/>
                             <constraint firstItem="Wd6-jv-1tL" firstAttribute="centerY" secondItem="W2j-vt-g6Q" secondAttribute="centerY" id="WOt-N6-DTb"/>
+                            <constraint firstItem="tX5-zX-Rfc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wos-AJ-2TR"/>
                             <constraint firstItem="Wd6-jv-1tL" firstAttribute="width" secondItem="W2j-vt-g6Q" secondAttribute="width" id="XmD-6g-4hn"/>
                             <constraint firstItem="Que-nV-It5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="YAF-Me-6Mu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W2j-vt-g6Q" secondAttribute="bottom" constant="20" id="YEm-SE-a2m"/>
                             <constraint firstItem="xms-6z-Bx6" firstAttribute="height" secondItem="crD-L3-auT" secondAttribute="height" id="a5t-DQ-gtd"/>
                             <constraint firstItem="xms-6z-Bx6" firstAttribute="centerX" secondItem="crD-L3-auT" secondAttribute="centerX" id="aBF-fo-LGD"/>
-                            <constraint firstItem="Que-nV-It5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bKh-5i-Fqb"/>
                             <constraint firstItem="crD-L3-auT" firstAttribute="height" secondItem="Que-nV-It5" secondAttribute="height" id="cPP-FL-M2H"/>
                             <constraint firstItem="xms-6z-Bx6" firstAttribute="width" secondItem="crD-L3-auT" secondAttribute="width" id="fwS-fE-juf"/>
+                            <constraint firstItem="efF-Yb-dCF" firstAttribute="top" secondItem="tX5-zX-Rfc" secondAttribute="bottom" constant="-1" id="h3C-qm-nxq"/>
+                            <constraint firstItem="Que-nV-It5" firstAttribute="top" secondItem="tX5-zX-Rfc" secondAttribute="bottom" constant="8" id="irb-ak-MAb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9EH-LI-7kj" secondAttribute="bottom" constant="20" id="moc-Un-ivL"/>
                             <constraint firstItem="crD-L3-auT" firstAttribute="centerX" secondItem="Que-nV-It5" secondAttribute="centerX" id="wlN-wX-Dix"/>
                             <constraint firstItem="W2j-vt-g6Q" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xT9-gd-ANp"/>
@@ -93,9 +117,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="9EH-LI-7kj" id="f05-q3-hvB"/>
                         <outlet property="massLabel" destination="crD-L3-auT" id="3Yt-GL-PoY"/>
                         <outlet property="radiusLabel" destination="xms-6z-Bx6" id="EAh-l2-6ZD"/>
+                        <outlet property="sectorLabel" destination="tX5-zX-Rfc" id="bo0-Z0-jwC"/>
+                        <outlet property="starLabel" destination="9EH-LI-7kj" id="Ksv-3D-6hm"/>
                         <outlet property="temperatureLabel" destination="Que-nV-It5" id="ek2-3o-Nxe"/>
                     </connections>
                 </viewController>
