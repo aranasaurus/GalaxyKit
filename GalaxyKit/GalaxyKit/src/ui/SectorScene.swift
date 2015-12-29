@@ -32,7 +32,7 @@ public extension Sector {
                 SCNTransaction.setAnimationDuration(2)
                 let constraint = SCNLookAtConstraint(target: starNode)
                 camera.constraints = [constraint]
-                camera.position = SCNVector3(x: starNode.position.x, y: starNode.position.y, z: starNode.position.z + 5)
+                camera.position = SCNVector3(x: starNode.position.x, y: starNode.position.y, z: starNode.position.z + 4)
                 SCNTransaction.commit()
             }
         }

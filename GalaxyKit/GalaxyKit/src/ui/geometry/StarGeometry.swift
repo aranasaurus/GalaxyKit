@@ -23,7 +23,7 @@ public extension Star {
         }
         
         public func configureForStar(star: Star) {
-            radius = star.normalizedRadius
+            radius = CGFloat(star.radius)
             firstMaterial?.diffuse.contents = star.color
         }
     }
