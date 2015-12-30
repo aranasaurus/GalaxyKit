@@ -10,6 +10,11 @@ import Foundation
 import SceneKit
 import QuartzCore
 
+private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
+private let sunsPerWindow = 10.0
+private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
+private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
+
 public extension Sector {
     public var scene: Scene {
         return Scene(sector: self)
@@ -32,7 +37,8 @@ public extension Sector {
                 SCNTransaction.setAnimationDuration(2)
                 let constraint = SCNLookAtConstraint(target: starNode)
                 camera.constraints = [constraint]
-                camera.position = SCNVector3(x: starNode.position.x, y: starNode.position.y, z: starNode.position.z + 4)
+                camera.position = SCNVector3(x: starNode.position.x, y: starNode.position.y, z: starNode.position.z + cameraDistance)
+                camera.camera?.focalSize = CGFloat(sector.systems[focusIndex].star.radius * 2.0)
                 SCNTransaction.commit()
             }
         }
@@ -43,6 +49,8 @@ public extension Sector {
             self.sector = sector
             let cam = SCNCamera()
             cam.automaticallyAdjustsZRange = true
+            cam.xFov = fov
+            cam.focalDistance = CGFloat(cameraDistance)
             self.camera = SCNNode()
             self.camera.camera = cam
             self.camera.position = SCNVector3(x: 0, y: 0, z: 0)

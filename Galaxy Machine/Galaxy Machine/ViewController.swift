@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var massLabel: UILabel!
     @IBOutlet var radiusLabel: UILabel!
     
-    var sector = Sector.init(50, 22, numSystems: 18) {
+    var sector = Sector.init(24, 44, numSystems: 18) {
         didSet {
             guard sector.x != oldValue.x || sector.y != oldValue.y else { return }
             configureForSector(sector)

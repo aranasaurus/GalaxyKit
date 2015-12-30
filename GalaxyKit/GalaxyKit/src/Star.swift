@@ -1,28 +1,5 @@
 import UIKit
 
-public typealias Kelvin = Double
-
-/**
- Standard unit of mass in astronomy indicating the mass of other stars, as well as clusters, nebulae and galaxies. 
- Equal to the mass of the Sun, about two nonillion kilograms.
- Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_mass).
-*/
-public typealias SolarMass = Double
-
-/** 
- Standard unit of distance used to express the size of stars in astronomy.
- Equal to the current radius of the Sun (aka: 6.955 x 10^5).
- Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_radius).
-*/
-public typealias SolarRadius = Double
-
-/**
- Unit of radiant flux (power emitted in the form of photons) conventionally used by astronomers to measure the luminosity of stars. 
- Defined in terms of the Sun's output.
- Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_luminosity).
-*/
-public typealias SolarLuminosity = Double
-
 protocol Numeric {}
 extension Double: Numeric {}
 extension Int: Numeric {}

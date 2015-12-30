@@ -20,6 +20,7 @@
 		94E8403A1C2E34BF007196E6 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840341C2E34BF007196E6 /* Seed.swift */; };
 		94E8403B1C2E34BF007196E6 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840351C2E34BF007196E6 /* Star.swift */; };
 		94E8403C1C2E34BF007196E6 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840361C2E34BF007196E6 /* System.swift */; };
+		94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		94E840341C2E34BF007196E6 /* Seed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		94E840351C2E34BF007196E6 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Star.swift; path = src/Star.swift; sourceTree = "<group>"; };
 		94E840361C2E34BF007196E6 /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = System.swift; path = src/System.swift; sourceTree = "<group>"; };
+		94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				94E840311C2E34BF007196E6 /* Coordinate.swift */,
 				94E840321C2E34BF007196E6 /* Extensions.swift */,
 				94E840341C2E34BF007196E6 /* Seed.swift */,
+				94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */,
 			);
 			name = util;
 			path = src/util;
@@ -276,6 +279,7 @@
 				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94E8403A1C2E34BF007196E6 /* Seed.swift in Sources */,
 				94E8403B1C2E34BF007196E6 /* Star.swift in Sources */,
+				94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */,
 				94E8403C1C2E34BF007196E6 /* System.swift in Sources */,
 				94E840391C2E34BF007196E6 /* Sector.swift in Sources */,
 			);

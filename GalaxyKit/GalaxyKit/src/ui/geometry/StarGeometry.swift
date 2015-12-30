@@ -10,6 +10,11 @@ import Foundation
 import SceneKit
 
 public extension Star {
+    public var material: SCNMaterial {
+        let m = SCNMaterial()
+        m.diffuse.contents = self.color
+        return m
+    }
     public class Geometry: SCNSphere {
         
         public init(star: Star) {
@@ -24,7 +29,8 @@ public extension Star {
         
         public func configureForStar(star: Star) {
             radius = CGFloat(star.radius)
-            firstMaterial?.diffuse.contents = star.color
+            materials = [star.material]
         }
     }
+    
 }
