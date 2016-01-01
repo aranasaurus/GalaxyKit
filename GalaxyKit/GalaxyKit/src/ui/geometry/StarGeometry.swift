@@ -12,9 +12,14 @@ import SceneKit
 public extension Star {
     public var material: SCNMaterial {
         let m = SCNMaterial()
-        m.diffuse.contents = self.color
+        
+        m.locksAmbientWithDiffuse = true
+        m.diffuse.contents = color
+        
+        m.cullMode = .Back
         return m
     }
+    
     public class Geometry: SCNSphere {
         
         public init(star: Star) {
@@ -32,5 +37,4 @@ public extension Star {
             materials = [star.material]
         }
     }
-    
 }

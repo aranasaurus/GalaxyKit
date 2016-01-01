@@ -42,17 +42,9 @@ class ViewController: UIViewController {
         return table
     }
     
-    var currentSystemIndex: Int = 0 {
+    var currentSystem: System? = .None {
         didSet {
-            if currentSystemIndex >= sector.systems.count {
-        currentSystemIndex = 0
-                
-                currentSystemIndex = currentSystemIndex % sector.systems.count
-            } else if currentSystemIndex < 0 {
-                currentSystemIndex = sector.systems.count - 1
-            }
-            
-            let currentSystem = sector.systems[currentSystemIndex]
+            guard let currentSystem = currentSystem else { return }
             starLabel.text = currentSystem.description
             
             numberFormatter.minimumSignificantDigits = 6
@@ -66,7 +58,6 @@ class ViewController: UIViewController {
             
             radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentSystem.star.radius)!) R☉"
             
-            self.sectorScene?.focusIndex = currentSystemIndex
             print(currentSystem.debugDescription)
         }
     }
@@ -91,15 +82,15 @@ class ViewController: UIViewController {
     func configureForSector(sector: Sector) {
         sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.systems.count) systems)"
         sceneView.scene = Sector.Scene(sector: sector)
-        currentSystemIndex = 0
+        currentSystem = sectorScene?.focusedSystem
     }
     
     @IBAction func nextButtonTapped() {
-        currentSystemIndex += 1
+        currentSystem = sectorScene?.focusNextSystem()
     }
     
     @IBAction func prevButtonTapped() {
-        currentSystemIndex -= 1
+        currentSystem = sectorScene?.focusPrevSystem()
     }
     
     @IBAction func changeSectorTapped() {
