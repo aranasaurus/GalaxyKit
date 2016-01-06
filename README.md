@@ -1,9 +1,10 @@
 # GalaxyKit
 A framework for generating galaxies algorithmically.
 
-# Getting it to build
+# Building the sample app
 Xcode 7.2 is (probably) required.
 
-Currently in order to get the app to build you need to set your Derived Data folder to be workspace-relative. There is an open issue for me to fix this (#10), but until I do you'll have to change this setting yourself to make the app build (it's in File -> Workspace Settings).
+1. Open [Galaxy Machine.xcodeproj](sample/Galaxy Machine.xcodeproj) from within the `sample` directory.
+2. Make sure the `Galaxy Machine` (not `GalaxyKit`) is selected and Build and Run
+3. If you have any troubles, open an [issue](https://github.com/aranasaurus/GalaxyKit/issues) or come find me in the [ios-developers slack](https://ios-developers.io)!
 
-Also note, the playground file doesn't currently work and I'm not sure that it will again without an Xcode update that fixes it.
