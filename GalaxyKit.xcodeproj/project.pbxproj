@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		944F746B1C31081800C4DA8B /* SystemScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F746A1C31081800C4DA8B /* SystemScene.swift */; };
-		944F746D1C31082E00C4DA8B /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F746C1C31082E00C4DA8B /* SceneKit.framework */; };
+		944F746D1C31082E00C4DA8B /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F746C1C31082E00C4DA8B /* SceneKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		946ED5891C2E33F3004E03A3 /* GalaxyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 946ED5881C2E33F3004E03A3 /* GalaxyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		946ED5901C2E33F3004E03A3 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */; };
 		946ED5951C2E33F3004E03A3 /* GalaxyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */; };
