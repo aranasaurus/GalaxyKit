@@ -1,30 +1,34 @@
+import GameplayKit
+
 public struct Sector {
-    public let x: UInt32
-    public let y: UInt32
-    public let systems: Array<System>
+    public let x: UInt
+    public let y: UInt
+    public let stars: [Star]
     
-    public init(_ x: UInt32, _ y: UInt32, numSystems: UInt8) {
+    public init(_ x: UInt, _ y: UInt, numStars: UInt) {
         self.x = x
         self.y = y
         
-        let coordSeed = (x << 16) + y
-        let starSeed = (y << 16) + x
+        let coordSource = GKMersenneTwisterRandomSource(seed: UInt64((x << 16) + y))
+        let starSource = GKMersenneTwisterRandomSource(seed: UInt64((y << 16) + x))
         
-        var seed = Seed(coordSeed, starSeed)
-        seed.rotateInPlace()
-        seed.rotateInPlace()
-        seed.rotateInPlace()
+        // Advance the sources by a few... just for fun.
+        coordSource.nextInt()
+        coordSource.nextInt()
+        coordSource.nextInt()
+        starSource.nextInt()
+        starSource.nextInt()
+        starSource.nextInt()
         
-        var systems = [System]()
-        for _ in 0..<numSystems {
-            seed.rotateInPlace()
-            systems.append(System(seed: seed))
+        var stars = [Star]()
+        for _ in 0..<numStars {
+            stars.append(Star(randomSource: starSource, coordinate: Coordinate(randomSource: coordSource)))
         }
-        self.systems = systems
+        self.stars = stars
     }
 }
 
 extension Sector: CustomDebugStringConvertible {
-    public var debugDescription: String { return "[\(x), \(y)]: \(systems)" }
+    public var debugDescription: String { return "[\(x), \(y)]: \(stars)" }
 }
 

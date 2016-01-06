@@ -20,6 +20,10 @@ public extension Star {
         return m
     }
     
+    public var geometry: Geometry {
+        return Geometry(star: self)
+    }
+    
     public class Geometry: SCNSphere {
         
         public init(star: Star) {

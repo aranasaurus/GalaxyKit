@@ -19,46 +19,31 @@ class ViewController: UIViewController {
     @IBOutlet var massLabel: UILabel!
     @IBOutlet var radiusLabel: UILabel!
     
-    var sector = Sector.init(24, 44, numSystems: 18) {
+    let galaxy = Galaxy(continueGeneratingBeyondMap : true)
+    var sector: Sector! = .None {
         didSet {
-            guard sector.x != oldValue.x || sector.y != oldValue.y else { return }
+            guard sector.x != oldValue?.x || sector.y != oldValue?.y else { return }
             configureForSector(sector)
         }
     }
     
-    var starDensityTable: [[Int]] {
-        if let table = NSUserDefaults.standardUserDefaults().objectForKey("starDensityTable") as? [[Int]] {
-            return table
-        }
-        var table = [[Int]]()
-        for _ in 0...64 {
-            var row = [Int]()
-            for _ in 0...64 {
-                row.append(Int(arc4random_uniform(24) + 1))
-            }
-            table.append(row)
-        }
-        NSUserDefaults.standardUserDefaults().setObject(table, forKey: "starDensityTable")
-        return table
-    }
-    
-    var currentSystem: System? = .None {
+    var currentStar: Star? = .None {
         didSet {
-            guard let currentSystem = currentSystem else { return }
-            starLabel.text = currentSystem.description
+            guard let currentStar = currentStar else { return }
+            starLabel.text = currentStar.description + "(\(currentStar.coordinate))"
             
             numberFormatter.minimumSignificantDigits = 6
             
             numberFormatter.maximumFractionDigits = 2
-            temperatureLabel.text = "temp: \(numberFormatter.stringFromNumber(currentSystem.star.temperature)!) K"
+            temperatureLabel.text = "temp: \(numberFormatter.stringFromNumber(currentStar.temperature)!) K"
             
             numberFormatter.maximumFractionDigits = 5
             numberFormatter.minimumIntegerDigits = 1
-            massLabel.text = "mass: \(numberFormatter.stringFromNumber(currentSystem.star.mass)!) M☉"
+            massLabel.text = "mass: \(numberFormatter.stringFromNumber(currentStar.mass)!) M☉"
             
-            radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentSystem.star.radius)!) R☉"
+            radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentStar.radius)!) R☉"
             
-            print(currentSystem.debugDescription)
+            print(currentStar.debugDescription)
         }
     }
     
@@ -72,6 +57,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sector = galaxy[21, 19]
         sceneView.backgroundColor = .blackColor()
         sceneView.autoenablesDefaultLighting = true
         sceneView.scene = Sector.Scene(sector: sector)
@@ -80,24 +66,23 @@ class ViewController: UIViewController {
     }
     
     func configureForSector(sector: Sector) {
-        sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.systems.count) systems)"
+        sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.stars.count) systems)"
         sceneView.scene = Sector.Scene(sector: sector)
-        currentSystem = sectorScene?.focusedSystem
+        currentStar = sectorScene?.focusedStar
     }
     
     @IBAction func nextButtonTapped() {
-        currentSystem = sectorScene?.focusNextSystem()
+        currentStar = sectorScene?.focusNextStar()
     }
     
     @IBAction func prevButtonTapped() {
-        currentSystem = sectorScene?.focusPrevSystem()
+        currentStar = sectorScene?.focusPrevStar()
     }
     
     @IBAction func changeSectorTapped() {
-        let x = arc4random_uniform(64)
-        let y = arc4random_uniform(64)
-        let numSystems = starDensityTable[Int(x)][Int(y)]
-        sector = Sector.init(x, y, numSystems: UInt8(numSystems))
+        let x = UInt(arc4random_uniform(64))
+        let y = UInt(arc4random_uniform(64))
+        sector = galaxy[x, y]
     }
 }
 

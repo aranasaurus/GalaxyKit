@@ -9,27 +9,27 @@
 import Foundation
 import SceneKit
 
-public extension System {
-    public var scene: Scene {
-        return Scene(system: self)
-    }
-    
-    public class Scene: SCNScene {
-        public let system: System
-        
-        public init(system: System) {
-            self.system = system
-            
-            super.init()
-            
-            let geom = Star.Geometry(star: system.star)
-            let node = SCNNode(geometry: geom)
-            rootNode.addChildNode(node)
-        }
-
-        required public init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-}
-
+//public extension System {
+//    public var scene: Scene {
+//        return Scene(system: self)
+//    }
+//    
+//    public class Scene: SCNScene {
+//        public let system: System
+//        
+//        public init(system: System) {
+//            self.system = system
+//            
+//            super.init()
+//            
+//            let geom = Star.Geometry(star: system.star)
+//            let node = SCNNode(geometry: geom)
+//            rootNode.addChildNode(node)
+//        }
+//
+//        required public init?(coder aDecoder: NSCoder) {
+//            fatalError("init(coder:) has not been implemented")
+//        }
+//    }
+//}
+//

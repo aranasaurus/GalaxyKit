@@ -1,23 +1,27 @@
+import GameplayKit
+
+private let sectorSize = 256
+
 public struct Coordinate {
-    public let x: Int32
-    public let y: Int32
-    public let z: Int32
+    public let x: Int
+    public let y: Int
+    public let z: Int
     
     public static let zero = Coordinate(x: 0, y: 0, z: 0)
     
-    public init(seed: Seed) {
-        self.z = Int32((seed.coordSeed & 0xFF0000) >> 16) - 128
-        self.y = Int32((seed.coordSeed & 0x00FF00) >> 8) - 128
-        self.x = Int32(seed.coordSeed & 0x0000FF) - 128
+    public init(randomSource: GKRandomSource) {
+        self.x = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
+        self.y = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
+        self.z = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
     }
     
-    public init(x: Int32, y: Int32, z:Int32) {
+    public init(x: Int, y: Int, z:Int) {
         self.x = x
         self.y = y
         self.z = z
     }
     
-    public func quickDistanceTo(other: Coordinate) -> Int32 {
+    public func quickDistanceTo(other: Coordinate) -> Int {
         let dx = abs(x - other.x)
         let dy = abs(y - other.y)
         let dz = abs(z - other.z)

@@ -24,10 +24,10 @@ public extension Sector {
         public let sector: Sector
         private var focusedIndex: Int {
             didSet {
-                if focusedIndex >= sortedSystems.count {
+                if focusedIndex >= sortedStars.count {
                     focusedIndex = 0
                 } else if focusedIndex < 0 {
-                    focusedIndex = sortedSystems.count - 1
+                    focusedIndex = sortedStars.count - 1
                 }
                 
                 SCNTransaction.begin()
@@ -36,15 +36,15 @@ public extension Sector {
                 let constraint = SCNLookAtConstraint(target: node)
                 camera.constraints = [constraint]
                 camera.position = SCNVector3(x: node.position.x, y: node.position.y, z: node.position.z + cameraDistance)
-                camera.camera?.focalSize = CGFloat(focusedSystem.star.radius * 2.0)
+                camera.camera?.focalSize = CGFloat(focusedStar.radius * 2.0)
                 SCNTransaction.commit()
             }
         }
-        public var focusedSystem: System {
-            return sortedSystems[focusedIndex]
+        public var focusedStar: Star {
+            return sortedStars[focusedIndex]
         }
-        private var sortedSystems: [System]
-        private let sortByX: (a: System, b: System) -> Bool = { a, b in
+        private var sortedStars: [Star]
+        private let sortByX: (a: Star, b: Star) -> Bool = { a, b in
             if a.coordinate.x == b.coordinate.x {
                 if a.coordinate.z == b.coordinate.z {
                     return a.coordinate.y < b.coordinate.y
@@ -53,11 +53,11 @@ public extension Sector {
             }
             return a.coordinate.x < b.coordinate.x
         }
-        private let sortByDistanceToZero: (a: System, b: System) -> Bool = { a, b in
+        private let sortByDistanceToZero: (a: Star, b: Star) -> Bool = { a, b in
             return a.coordinate.quickDistanceTo(Coordinate.zero) < b.coordinate.quickDistanceTo(Coordinate.zero)
         }
-        private let sortByMass: (a: System, b: System) -> Bool = { a, b in
-            return a.star.mass > b.star.mass
+        private let sortByMass: (a: Star, b: Star) -> Bool = { a, b in
+            return a.mass > b.mass
         }
         
         private let camera: SCNNode
@@ -72,35 +72,35 @@ public extension Sector {
             self.camera = SCNNode()
             self.camera.camera = cam
             self.camera.position = SCNVector3(x: 0, y: 0, z: 0)
-            self.sortedSystems = sector.systems.sort(sortByMass)
-            self.focusedIndex = sortedSystems.count - 1
+            self.sortedStars = sector.stars.sort(sortByX)
+            self.focusedIndex = sortedStars.count - 1
             
             super.init()
             
-            for system in sortedSystems {
-                let geom = Star.Geometry(star: system.star)
+            for star in sortedStars {
+                let geom = Star.Geometry(star: star)
                 let node = SCNNode(geometry: geom)
-                node.position = SCNVector3.vectorFromCoordinate(system.coordinate)
+                node.position = SCNVector3.vectorFromCoordinate(star.coordinate)
                 rootNode.addChildNode(node)
                 starNodes.append(node)
             }
             
             rootNode.addChildNode(camera)
-            self.focusNextSystem()
+            self.focusNextStar()
         }
 
         required public init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
         
-        public func focusNextSystem() -> System {
+        public func focusNextStar() -> Star {
             focusedIndex += 1
-            return focusedSystem
+            return focusedStar
         }
         
-        public func focusPrevSystem() -> System {
+        public func focusPrevStar() -> Star {
             focusedIndex -= 1
-            return focusedSystem
+            return focusedStar
         }
     }
 }

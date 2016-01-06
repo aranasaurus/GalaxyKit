@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94045DD41C313FA90063C994 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94045DD31C313FA90063C994 /* GalaxyKit.framework */; };
-		94045DD51C31400E0063C994 /* GalaxyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94045DD31C313FA90063C994 /* GalaxyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		944F74541C31071500C4DA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74531C31071500C4DA8B /* AppDelegate.swift */; };
 		944F74561C31071500C4DA8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74551C31071500C4DA8B /* ViewController.swift */; };
 		944F74591C31071500C4DA8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F74571C31071500C4DA8B /* Main.storyboard */; };
 		944F745B1C31071500C4DA8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 944F745A1C31071500C4DA8B /* Assets.xcassets */; };
 		944F745E1C31071500C4DA8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F745C1C31071500C4DA8B /* LaunchScreen.storyboard */; };
+		94C938721C3CFD6C0084FC0A /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9386F1C3CFCFE0084FC0A /* GalaxyKit.framework */; };
+		94C938731C3CFD6C0084FC0A /* GalaxyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94C9386F1C3CFCFE0084FC0A /* GalaxyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		94C9386E1C3CFCFE0084FC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 946ED5851C2E33F3004E03A3;
+			remoteInfo = GalaxyKit;
+		};
+		94C938701C3CFCFE0084FC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 946ED58F1C2E33F3004E03A3;
+			remoteInfo = GalaxyKitTests;
+		};
+		94C938741C3CFD6C0084FC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 946ED5841C2E33F3004E03A3;
+			remoteInfo = GalaxyKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		94045DD21C313A1D0063C994 /* Embed Frameworks */ = {
+		94C938681C3CFC9D0084FC0A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				94045DD51C31400E0063C994 /* GalaxyKit.framework in Embed Frameworks */,
+				94C938731C3CFD6C0084FC0A /* GalaxyKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		94045DC31C3133A40063C994 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
-		94045DD31C313FA90063C994 /* GalaxyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GalaxyKit.framework; path = "../Build/Products/Debug-iphoneos/GalaxyKit.framework"; sourceTree = "<group>"; };
 		944F74501C31071500C4DA8B /* Galaxy Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galaxy Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F74531C31071500C4DA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944F74551C31071500C4DA8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +63,7 @@
 		944F745A1C31071500C4DA8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F745D1C31071500C4DA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		944F745F1C31071500C4DA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GalaxyKit.xcodeproj; path = ../GalaxyKit/GalaxyKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94045DD41C313FA90063C994 /* GalaxyKit.framework in Frameworks */,
+				94C938721C3CFD6C0084FC0A /* GalaxyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +81,7 @@
 		944F74471C31071500C4DA8B = {
 			isa = PBXGroup;
 			children = (
+				94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */,
 				944F74691C31074B00C4DA8B /* Frameworks */,
 				944F74521C31071500C4DA8B /* Galaxy Machine */,
 				944F74511C31071500C4DA8B /* Products */,
@@ -87,10 +112,18 @@
 		944F74691C31074B00C4DA8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94045DD31C313FA90063C994 /* GalaxyKit.framework */,
 				94045DC31C3133A40063C994 /* SceneKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94C9386A1C3CFCFE0084FC0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94C9386F1C3CFCFE0084FC0A /* GalaxyKit.framework */,
+				94C938711C3CFCFE0084FC0A /* GalaxyKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,11 +136,12 @@
 				944F744C1C31071500C4DA8B /* Sources */,
 				944F744D1C31071500C4DA8B /* Frameworks */,
 				944F744E1C31071500C4DA8B /* Resources */,
-				94045DD21C313A1D0063C994 /* Embed Frameworks */,
+				94C938681C3CFC9D0084FC0A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				94C938751C3CFD6C0084FC0A /* PBXTargetDependency */,
 			);
 			name = "Galaxy Machine";
 			productName = "Galaxy Machine";
@@ -140,12 +174,35 @@
 			mainGroup = 944F74471C31071500C4DA8B;
 			productRefGroup = 944F74511C31071500C4DA8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 94C9386A1C3CFCFE0084FC0A /* Products */;
+					ProjectRef = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				944F744F1C31071500C4DA8B /* Galaxy Machine */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		94C9386F1C3CFCFE0084FC0A /* GalaxyKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GalaxyKit.framework;
+			remoteRef = 94C9386E1C3CFCFE0084FC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		94C938711C3CFCFE0084FC0A /* GalaxyKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GalaxyKitTests.xctest;
+			remoteRef = 94C938701C3CFCFE0084FC0A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		944F744E1C31071500C4DA8B /* Resources */ = {
@@ -171,6 +228,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94C938751C3CFD6C0084FC0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GalaxyKit;
+			targetProxy = 94C938741C3CFD6C0084FC0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		944F74571C31071500C4DA8B /* Main.storyboard */ = {
@@ -283,6 +348,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/usr/local/src/github/aranasaurus/space-playground/GalaxyKit/build/Debug-iphoneos",
+					"/usr/local/src/github/aranasaurus/space-playground/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Galaxy Machine/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -299,6 +365,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/usr/local/src/github/aranasaurus/space-playground/GalaxyKit/build/Debug-iphoneos",
+					"/usr/local/src/github/aranasaurus/space-playground/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Galaxy Machine/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
