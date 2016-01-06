@@ -1,5 +1,5 @@
-# space-playground
-My place to play around with some universe generation algorithms
+# GalaxyKit
+A framework for generating galaxies algorithmically.
 
 # Getting it to build
 Xcode 7.2 is (probably) required.
