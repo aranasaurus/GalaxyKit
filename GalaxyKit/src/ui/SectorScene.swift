@@ -11,7 +11,7 @@ import SceneKit
 import QuartzCore
 
 private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
-private let sunsPerWindow = 10.0
+private let sunsPerWindow = 6.0
 private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
 private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
 

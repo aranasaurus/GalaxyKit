@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sector = galaxy[21, 19]
+        sector = galaxy[37, 47] // 37, 47 has a B0 in it!
         sceneView.backgroundColor = .blackColor()
         sceneView.autoenablesDefaultLighting = true
         sceneView.scene = Sector.Scene(sector: sector)
