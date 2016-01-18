@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9405E0E61C444EFD00DFA753 /* GalaxyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405E0E51C444EFD00DFA753 /* GalaxyScene.swift */; };
 		944F746D1C31082E00C4DA8B /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944F746C1C31082E00C4DA8B /* SceneKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		946ED5891C2E33F3004E03A3 /* GalaxyKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 946ED5881C2E33F3004E03A3 /* GalaxyKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		946ED5901C2E33F3004E03A3 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9405E0E51C444EFD00DFA753 /* GalaxyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalaxyScene.swift; sourceTree = "<group>"; };
 		944F746C1C31082E00C4DA8B /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GalaxyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		946ED5881C2E33F3004E03A3 /* GalaxyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalaxyKit.h; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				9489CB2F1C31E49D0016E32B /* geometry */,
 				94D8AFDD1C325C040085D8E8 /* SectorScene.swift */,
+				9405E0E51C444EFD00DFA753 /* GalaxyScene.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				94D8AFDE1C325C040085D8E8 /* SectorScene.swift in Sources */,
 				9489CB2E1C31DF070016E32B /* StarGeometry.swift in Sources */,
 				94C938651C3CD91E0084FC0A /* Galaxy.swift in Sources */,
+				9405E0E61C444EFD00DFA753 /* GalaxyScene.swift in Sources */,
 				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94C938631C3CD87B0084FC0A /* StarClassification.swift in Sources */,
 				94E8403B1C2E34BF007196E6 /* Star.swift in Sources */,
