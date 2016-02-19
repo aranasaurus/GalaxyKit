@@ -1,27 +1,26 @@
 import GameplayKit
 
-private let sectorSize = 256
-
-public struct Coordinate {
-    public let x: Int
-    public let y: Int
-    public let z: Int
+public struct Coordinate<UnitType: UnitOfLengthType> {
+    public static var zero: Coordinate<UnitType> { return Coordinate(x: 0, y: 0, z: 0) }
     
-    public static let zero = Coordinate(x: 0, y: 0, z: 0)
+    public let x: UnitType
+    public let y: UnitType
+    public let z: UnitType
     
-    public init(randomSource: GKRandomSource) {
-        self.x = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
-        self.y = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
-        self.z = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
+    public init(randomSource: GKRandomSource, minCoord: UnitType, maxCoord: UnitType) {
+        let range = Float(maxCoord.value - minCoord.value)
+        self.x = UnitType(Double(randomSource.nextUniform() * range) + minCoord.value)
+        self.y = UnitType(Double(randomSource.nextUniform() * range) + minCoord.value)
+        self.z = UnitType(Double(randomSource.nextUniform() * range) + minCoord.value)
     }
     
-    public init(x: Int, y: Int, z:Int) {
+    public init(x: UnitType, y: UnitType, z: UnitType) {
         self.x = x
         self.y = y
         self.z = z
     }
     
-    public func quickDistanceTo(other: Coordinate) -> Int {
+    public func quickDistanceTo(other: Coordinate) -> Double {
         let dx = abs(x - other.x)
         let dy = abs(y - other.y)
         let dz = abs(z - other.z)
@@ -29,7 +28,7 @@ public struct Coordinate {
     }
     
     public func distanceTo(other: Coordinate) -> Double {
-        return sqrt(Double(quickDistanceTo(other)))
+        return sqrt(quickDistanceTo(other))
     }
 }
 
@@ -38,9 +37,3 @@ extension Coordinate: CustomDebugStringConvertible {
 }
 
 extension Coordinate: Equatable { }
-public func ==(left: Coordinate, right: Coordinate) -> Bool {
-    guard left.x == right.x else { return false }
-    guard left.y == right.y else { return false }
-    guard left.z == right.z else { return false }
-    return true
-}

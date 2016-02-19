@@ -22,7 +22,7 @@ public struct Sector {
         
         var stars = [Star]()
         for _ in 0..<numStars {
-            stars.append(Star(randomSource: starSource, coordinate: Coordinate(randomSource: coordSource)))
+            stars.append(Star(randomSource: starSource, coordinate: Coordinate(randomSource: coordSource, minCoord: 0, maxCoord: 520)))
         }
         self.stars = stars
     }

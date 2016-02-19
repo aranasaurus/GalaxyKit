@@ -37,7 +37,7 @@ public extension Star {
         }
         
         public func configureForStar(star: Star) {
-            radius = CGFloat(star.radius)
+            radius = CGFloat(star.radius.value)
             materials = [star.material]
         }
     }

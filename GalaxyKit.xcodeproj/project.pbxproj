@@ -12,6 +12,11 @@
 		946ED5901C2E33F3004E03A3 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */; };
 		946ED5951C2E33F3004E03A3 /* GalaxyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */; };
 		9489CB2E1C31DF070016E32B /* StarGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489CB2D1C31DF070016E32B /* StarGeometry.swift */; };
+		949C24B41C76FC36006D8FE1 /* Kilometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C24B31C76FC36006D8FE1 /* Kilometer.swift */; };
+		949C24B71C76FCC9006D8FE1 /* SolarRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C24B61C76FCC9006D8FE1 /* SolarRadius.swift */; };
+		949C24B91C76FE3E006D8FE1 /* AstronomicalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C24B81C76FE3E006D8FE1 /* AstronomicalUnit.swift */; };
+		949C24BB1C7700CA006D8FE1 /* LightYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C24BA1C7700CA006D8FE1 /* LightYear.swift */; };
+		949C24BD1C77011F006D8FE1 /* Parsec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949C24BC1C77011F006D8FE1 /* Parsec.swift */; };
 		94C938631C3CD87B0084FC0A /* StarClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C938621C3CD87B0084FC0A /* StarClassification.swift */; };
 		94C938651C3CD91E0084FC0A /* Galaxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C938641C3CD91E0084FC0A /* Galaxy.swift */; };
 		94D8AFDE1C325C040085D8E8 /* SectorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8AFDD1C325C040085D8E8 /* SectorScene.swift */; };
@@ -41,6 +46,11 @@
 		946ED5941C2E33F3004E03A3 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
 		946ED5961C2E33F3004E03A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9489CB2D1C31DF070016E32B /* StarGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarGeometry.swift; sourceTree = "<group>"; };
+		949C24B31C76FC36006D8FE1 /* Kilometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kilometer.swift; sourceTree = "<group>"; };
+		949C24B61C76FCC9006D8FE1 /* SolarRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolarRadius.swift; sourceTree = "<group>"; };
+		949C24B81C76FE3E006D8FE1 /* AstronomicalUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronomicalUnit.swift; sourceTree = "<group>"; };
+		949C24BA1C7700CA006D8FE1 /* LightYear.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightYear.swift; sourceTree = "<group>"; };
+		949C24BC1C77011F006D8FE1 /* Parsec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parsec.swift; sourceTree = "<group>"; };
 		94C938621C3CD87B0084FC0A /* StarClassification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarClassification.swift; sourceTree = "<group>"; };
 		94C938641C3CD91E0084FC0A /* Galaxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galaxy.swift; sourceTree = "<group>"; };
 		94D8AFDD1C325C040085D8E8 /* SectorScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectorScene.swift; sourceTree = "<group>"; };
@@ -129,9 +139,9 @@
 		9477F4531C2E4204006F004B /* util */ = {
 			isa = PBXGroup;
 			children = (
+				949C24B51C76FC43006D8FE1 /* units */,
 				94E840311C2E34BF007196E6 /* Coordinate.swift */,
 				94E840321C2E34BF007196E6 /* Extensions.swift */,
-				94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -142,6 +152,19 @@
 				9489CB2D1C31DF070016E32B /* StarGeometry.swift */,
 			);
 			path = geometry;
+			sourceTree = "<group>";
+		};
+		949C24B51C76FC43006D8FE1 /* units */ = {
+			isa = PBXGroup;
+			children = (
+				94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */,
+				949C24B31C76FC36006D8FE1 /* Kilometer.swift */,
+				949C24B61C76FCC9006D8FE1 /* SolarRadius.swift */,
+				949C24B81C76FE3E006D8FE1 /* AstronomicalUnit.swift */,
+				949C24BA1C7700CA006D8FE1 /* LightYear.swift */,
+				949C24BC1C77011F006D8FE1 /* Parsec.swift */,
+			);
+			path = units;
 			sourceTree = "<group>";
 		};
 		94E8403D1C2E356D007196E6 /* src */ = {
@@ -265,13 +288,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949C24B41C76FC36006D8FE1 /* Kilometer.swift in Sources */,
+				949C24BD1C77011F006D8FE1 /* Parsec.swift in Sources */,
 				94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */,
 				94D8AFDE1C325C040085D8E8 /* SectorScene.swift in Sources */,
 				9489CB2E1C31DF070016E32B /* StarGeometry.swift in Sources */,
+				949C24B71C76FCC9006D8FE1 /* SolarRadius.swift in Sources */,
 				94C938651C3CD91E0084FC0A /* Galaxy.swift in Sources */,
 				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94C938631C3CD87B0084FC0A /* StarClassification.swift in Sources */,
 				94E8403B1C2E34BF007196E6 /* Star.swift in Sources */,
+				949C24BB1C7700CA006D8FE1 /* LightYear.swift in Sources */,
+				949C24B91C76FE3E006D8FE1 /* AstronomicalUnit.swift in Sources */,
 				94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */,
 				94E840391C2E34BF007196E6 /* Sector.swift in Sources */,
 			);

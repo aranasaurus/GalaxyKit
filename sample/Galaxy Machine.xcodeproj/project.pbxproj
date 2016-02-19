@@ -80,7 +80,7 @@
 		944F74471C31071500C4DA8B = {
 			isa = PBXGroup;
 			children = (
-				944F74691C31074B00C4DA8B /* Frameworks */,
+				94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */,
 				944F74521C31071500C4DA8B /* Galaxy Machine */,
 				944F74511C31071500C4DA8B /* Products */,
 			);
@@ -105,14 +105,6 @@
 				944F745F1C31071500C4DA8B /* Info.plist */,
 			);
 			path = "Galaxy Machine";
-			sourceTree = "<group>";
-		};
-		944F74691C31074B00C4DA8B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		94E27EAB1C3D0CAF006CCE91 /* Products */ = {

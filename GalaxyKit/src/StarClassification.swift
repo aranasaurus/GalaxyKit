@@ -87,7 +87,7 @@ public extension Star {
         }
         func radius(percentile: Double) -> SolarRadius {
             let range = radiusRange
-            return SolarRadius(doubleFromRange(range.min, max: range.max, percentile: percentile))
+            return SolarRadius(doubleFromRange(range.min.value, max: range.max.value, percentile: percentile))
         }
         
         var luminosityRange: (min: SolarLuminosity, max: SolarLuminosity) {

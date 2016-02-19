@@ -11,11 +11,11 @@ public struct Star {
     public var mass: SolarMass
     public var radius: SolarRadius
     public var luminosity: SolarLuminosity
-    public let coordinate: Coordinate
+    public let coordinate: Coordinate<Parsec>
     
     public var color: UIColor { return classification.color(temperature / classification.tempRange.max) }
     
-    public init(randomSource: GKRandomSource, coordinate: Coordinate) {
+    public init(randomSource: GKRandomSource, coordinate: Coordinate<Parsec>) {
         self.coordinate = coordinate
         let classificationPercentile = Double(randomSource.nextUniform())
         let attributesPercentile = Double(randomSource.nextUniform())
@@ -27,7 +27,7 @@ public struct Star {
         self.luminosity = classification.luminosity(attributesPercentile)
     }
     
-    public init(classification: Classification, subclass: Int, temperature: Kelvin, mass: SolarMass, radius: SolarRadius, luminosity: SolarLuminosity, coordinate: Coordinate) {
+    public init(classification: Classification, subclass: Int, temperature: Kelvin, mass: SolarMass, radius: SolarRadius, luminosity: SolarLuminosity, coordinate: Coordinate<Parsec>) {
         self.coordinate = coordinate
         self.classification = classification
         self.subclass = subclass

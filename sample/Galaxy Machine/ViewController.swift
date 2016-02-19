@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             numberFormatter.minimumIntegerDigits = 1
             massLabel.text = "mass: \(numberFormatter.stringFromNumber(currentStar.mass)!) M☉"
             
-            radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentStar.radius)!) R☉"
+            radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentStar.radius.value)!) R☉"
             
             print(currentStar.debugDescription)
         }

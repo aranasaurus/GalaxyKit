@@ -13,7 +13,7 @@ import QuartzCore
 private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
 private let sunsPerWindow = 6.0
 private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
-private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
+private let cameraDistance = Float(AstronomicalUnit.solarRadii)
 
 public extension Sector {
     public var scene: Scene {
@@ -45,13 +45,13 @@ public extension Sector {
         }
         private var sortedStars: [Star]
         private let sortByX: (a: Star, b: Star) -> Bool = { a, b in
-            if a.coordinate.x == b.coordinate.x {
-                if a.coordinate.z == b.coordinate.z {
-                    return a.coordinate.y < b.coordinate.y
+            if a.coordinate.x.value == b.coordinate.x.value {
+                if a.coordinate.z.value == b.coordinate.z.value {
+                    return a.coordinate.y.value < b.coordinate.y.value
                 }
-                return a.coordinate.z < b.coordinate.z
+                return a.coordinate.z.value < b.coordinate.z.value
             }
-            return a.coordinate.x < b.coordinate.x
+            return a.coordinate.x.value < b.coordinate.x.value
         }
         private let sortByDistanceToZero: (a: Star, b: Star) -> Bool = { a, b in
             return a.coordinate.quickDistanceTo(Coordinate.zero) < b.coordinate.quickDistanceTo(Coordinate.zero)
@@ -106,7 +106,7 @@ public extension Sector {
 }
 
 extension SCNVector3 {
-    static func vectorFromCoordinate(coord: Coordinate) -> SCNVector3 {
-        return SCNVector3(x: Float(coord.x), y: Float(coord.y), z: Float(coord.z))
+    static func vectorFromCoordinate(coord: Coordinate<Parsec>) -> SCNVector3 {
+        return SCNVector3(x: Float(coord.x.value), y: Float(coord.y.value), z: Float(coord.z.value))
     }
 }
