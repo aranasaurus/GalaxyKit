@@ -10,9 +10,9 @@ public struct Coordinate {
     public static let zero = Coordinate(x: 0, y: 0, z: 0)
     
     public init(randomSource: GKRandomSource) {
-        self.x = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
-        self.y = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
-        self.z = randomSource.nextIntWithUpperBound(sectorSize) - (sectorSize/2)
+        self.x = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
+        self.y = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
+        self.z = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
     }
     
     public init(x: Int, y: Int, z:Int) {
@@ -21,14 +21,14 @@ public struct Coordinate {
         self.z = z
     }
     
-    public func quickDistanceTo(other: Coordinate) -> Int {
+    public func quickDistanceTo(_ other: Coordinate) -> Int {
         let dx = abs(x - other.x)
         let dy = abs(y - other.y)
         let dz = abs(z - other.z)
         return dx * dx + dy * dy + dz * dz
     }
     
-    public func distanceTo(other: Coordinate) -> Double {
+    public func distanceTo(_ other: Coordinate) -> Double {
         return sqrt(Double(quickDistanceTo(other)))
     }
 }

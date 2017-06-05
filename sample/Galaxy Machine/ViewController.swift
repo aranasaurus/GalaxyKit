@@ -20,35 +20,35 @@ class ViewController: UIViewController {
     @IBOutlet var radiusLabel: UILabel!
     
     let galaxy = Galaxy(continueGeneratingBeyondMap : true)
-    var sector: Sector! = .None {
+    var sector: Sector! = .none {
         didSet {
             guard sector.x != oldValue?.x || sector.y != oldValue?.y else { return }
             configureForSector(sector)
         }
     }
     
-    var currentStar: Star? = .None {
+    var currentStar: Star? = .none {
         didSet {
             guard let currentStar = currentStar else { return }
             starLabel.text = currentStar.description + "(\(currentStar.coordinate))"
-            
+                
             numberFormatter.minimumSignificantDigits = 6
             
             numberFormatter.maximumFractionDigits = 2
-            temperatureLabel.text = "temp: \(numberFormatter.stringFromNumber(currentStar.temperature)!) K"
+            temperatureLabel.text = "temp: \(numberFormatter.string(from: NSNumber(value: currentStar.temperature))!) K"
             
             numberFormatter.maximumFractionDigits = 5
             numberFormatter.minimumIntegerDigits = 1
-            massLabel.text = "mass: \(numberFormatter.stringFromNumber(currentStar.mass)!) M☉"
+            massLabel.text = "mass: \(numberFormatter.string(from: NSNumber(value: currentStar.mass))!) M☉"
             
-            radiusLabel.text = "rad:  \(numberFormatter.stringFromNumber(currentStar.radius)!) R☉"
+            radiusLabel.text = "rad:  \(numberFormatter.string(from: NSNumber(value: currentStar.radius))!) R☉"
             
             print(currentStar.debugDescription)
         }
     }
     
-    var numberFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
+    var numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.usesSignificantDigits = false
         return formatter
@@ -58,14 +58,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         sector = galaxy[37, 47] // 37, 47 has a B0 in it!
-        sceneView.backgroundColor = .blackColor()
+        sceneView.backgroundColor = .black
         sceneView.autoenablesDefaultLighting = true
         sceneView.scene = Sector.Scene(sector: sector)
         
         configureForSector(sector)
     }
     
-    func configureForSector(sector: Sector) {
+    func configureForSector(_ sector: Sector) {
         sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.stars.count) systems)"
         sceneView.scene = Sector.Scene(sector: sector)
         currentStar = sectorScene?.focusedStar

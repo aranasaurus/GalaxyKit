@@ -9,21 +9,21 @@
 import Foundation
 import GameplayKit
 
-public class Galaxy {
+open class Galaxy {
     let densityMap: [UInt]
     
-    public var continueGeneratingBeyondMap = false
+    open var continueGeneratingBeyondMap = false
     // All of this density stuff will only be used if `continueGeneratingBeyondMap` is `true` and a sector is requested outside the densityMap.
-    public var minDensity = 1
-    public var maxDensity = 64
-    public lazy var densitySeed: UInt64 = UInt64(NSDate().timeIntervalSinceReferenceDate)
-    public lazy var densityDistribution: GKGaussianDistribution = {
+    open var minDensity = 1
+    open var maxDensity = 64
+    open lazy var densitySeed: UInt64 = UInt64(Date().timeIntervalSinceReferenceDate)
+    open lazy var densityDistribution: GKGaussianDistribution = {
         let source = GKMersenneTwisterRandomSource(seed: self.densitySeed)
         let distribution = GKGaussianDistribution(randomSource: source, lowestValue: self.minDensity, highestValue: self.maxDensity)
         return distribution
     }()
     
-    public subscript(x: UInt, y: UInt) -> Sector {
+    open subscript(x: UInt, y: UInt) -> Sector {
         let index = Int(x + y)
         if !continueGeneratingBeyondMap {
             precondition(index < densityMap.count, "Sector coordinates out of bounds... sorry this Galaxy _does_ have limits")

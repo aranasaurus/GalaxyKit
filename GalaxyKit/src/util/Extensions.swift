@@ -2,12 +2,12 @@ public extension UInt64 {
     var uint32Value: UInt32 { return UInt32(self & UInt64(UInt32.max)) }
 }
 
-public extension UnsignedIntegerType {
+public extension UnsignedInteger {
     var binaryString: String {
         let s = String(self, radix: 2)
         var ret = [Character]()
         var spaces = 0
-        for (i, c) in s.characters.reverse().enumerate() {
+        for (i, c) in s.characters.reversed().enumerated() {
             defer {
                 ret.append(c)
             }
@@ -20,14 +20,14 @@ public extension UnsignedIntegerType {
             ret.append(" ")
         }
         while ret.count < 32+9 {
-            ret.insert("0", atIndex: 0)
+            ret.insert("0", at: 0)
         }
         return String(ret)
     }
 }
 
 public extension Array {
-    func itemWithSeed(i: Int) -> Element {
+    func itemWithSeed(_ i: Int) -> Element {
         return self[i % count]
     }
 }

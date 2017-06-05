@@ -21,8 +21,8 @@ public extension Sector {
     }
     
     public class Scene: SCNScene {
-        public let sector: Sector
-        private var focusedIndex: Int {
+        open let sector: Sector
+        fileprivate var focusedIndex: Int {
             didSet {
                 if focusedIndex >= sortedStars.count {
                     focusedIndex = 0
@@ -31,7 +31,7 @@ public extension Sector {
                 }
                 
                 SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(2)
+                SCNTransaction.animationDuration = 2
                 let node = starNodes[focusedIndex]
                 let constraint = SCNLookAtConstraint(target: node)
                 camera.constraints = [constraint]
@@ -40,11 +40,11 @@ public extension Sector {
                 SCNTransaction.commit()
             }
         }
-        public var focusedStar: Star {
+        open var focusedStar: Star {
             return sortedStars[focusedIndex]
         }
-        private var sortedStars: [Star]
-        private let sortByX: (a: Star, b: Star) -> Bool = { a, b in
+        fileprivate var sortedStars: [Star]
+        fileprivate let sortByX: (_ a: Star, _ b: Star) -> Bool = { a, b in
             if a.coordinate.x == b.coordinate.x {
                 if a.coordinate.z == b.coordinate.z {
                     return a.coordinate.y < b.coordinate.y
@@ -53,15 +53,15 @@ public extension Sector {
             }
             return a.coordinate.x < b.coordinate.x
         }
-        private let sortByDistanceToZero: (a: Star, b: Star) -> Bool = { a, b in
+        fileprivate let sortByDistanceToZero: (_ a: Star, _ b: Star) -> Bool = { a, b in
             return a.coordinate.quickDistanceTo(Coordinate.zero) < b.coordinate.quickDistanceTo(Coordinate.zero)
         }
-        private let sortByMass: (a: Star, b: Star) -> Bool = { a, b in
+        fileprivate let sortByMass: (_ a: Star, _ b: Star) -> Bool = { a, b in
             return a.mass > b.mass
         }
         
-        private let camera: SCNNode
-        private var starNodes = [SCNNode]()
+        fileprivate let camera: SCNNode
+        fileprivate var starNodes = [SCNNode]()
         
         public init(sector: Sector) {
             self.sector = sector
@@ -72,7 +72,7 @@ public extension Sector {
             self.camera = SCNNode()
             self.camera.camera = cam
             self.camera.position = SCNVector3(x: 0, y: 0, z: 0)
-            self.sortedStars = sector.stars.sort(sortByX)
+            self.sortedStars = sector.stars.sorted(by: sortByX)
             self.focusedIndex = sortedStars.count - 1
             
             super.init()
@@ -92,13 +92,15 @@ public extension Sector {
         required public init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        
-        public func focusNextStar() -> Star {
+
+        @discardableResult
+        open func focusNextStar() -> Star {
             focusedIndex += 1
             return focusedStar
         }
         
-        public func focusPrevStar() -> Star {
+        @discardableResult
+        open func focusPrevStar() -> Star {
             focusedIndex -= 1
             return focusedStar
         }
@@ -106,7 +108,7 @@ public extension Sector {
 }
 
 extension SCNVector3 {
-    static func vectorFromCoordinate(coord: Coordinate) -> SCNVector3 {
+    static func vectorFromCoordinate(_ coord: Coordinate) -> SCNVector3 {
         return SCNVector3(x: Float(coord.x), y: Float(coord.y), z: Float(coord.z))
     }
 }

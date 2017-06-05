@@ -16,7 +16,7 @@ public extension Star {
         m.locksAmbientWithDiffuse = true
         m.diffuse.contents = color
         
-        m.cullMode = .Back
+        m.cullMode = .back
         return m
     }
     
@@ -36,7 +36,7 @@ public extension Star {
             fatalError("init(coder:) has not been implemented")
         }
         
-        public func configureForStar(star: Star) {
+        open func configureForStar(_ star: Star) {
             radius = CGFloat(star.radius)
             materials = [star.material]
         }

@@ -15,15 +15,15 @@ private let solarRadiiPerAU: Double = 215
 
 public typealias Parsec = Double
 public extension Parsec {
-    public static func parsec(au au: AU) -> Parsec {
+    public static func parsec(au: AU) -> Parsec {
         return Parsec(au / auPerParsec)
     }
     
-    public static func parsec(lightYears lightYears: LightYear) -> Parsec {
+    public static func parsec(lightYears: LightYear) -> Parsec {
         return Parsec(lightYears / lyPerParsec)
     }
     
-    public static func parsec(solarRadii solarRadii: SolarRadius) -> Parsec {
+    public static func parsec(solarRadii: SolarRadius) -> Parsec {
         let au = AU.au(solarRadii: solarRadii)
         return Parsec(au / auPerParsec)
     }
@@ -31,26 +31,26 @@ public extension Parsec {
 
 public typealias AU = Double
 public extension AU {
-    public static func au(parsec parsec: Parsec) -> AU {
+    public static func au(parsec: Parsec) -> AU {
         return AU(parsec * auPerParsec)
     }
     
-    public static func au(lightYears lightYears: LightYear) -> AU {
+    public static func au(lightYears: LightYear) -> AU {
         return AU(lightYears * auPerLightYear)
     }
     
-    public static func au(solarRadii solarRadii: SolarRadius) -> AU {
+    public static func au(solarRadii: SolarRadius) -> AU {
         return AU(solarRadii / solarRadiiPerAU)
     }
 }
 
 public typealias LightYear = Double
 public extension LightYear {
-    public static func lightYear(au au: AU) -> LightYear {
+    public static func lightYear(au: AU) -> LightYear {
         return LightYear(au / auPerLightYear)
     }
     
-    public static func lightYear(parsec parsec: Parsec) -> LightYear {
+    public static func lightYear(parsec: Parsec) -> LightYear {
         return LightYear(parsec * lyPerParsec)
     }
 }
@@ -71,7 +71,7 @@ public typealias SolarMass = Double
 */
 public typealias SolarRadius = Double
 public extension SolarRadius {
-    public static func solarRadius(au au: AU) -> SolarRadius {
+    public static func solarRadius(au: AU) -> SolarRadius {
         return SolarRadius(au * solarRadiiPerAU)
     }
 }
