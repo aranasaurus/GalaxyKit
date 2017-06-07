@@ -25,7 +25,7 @@ public class Galaxy {
 
     public subscript(x: UInt, y: UInt) -> Sector {
         let index = Int(x + y)
-        if !continueGeneratingBeyondMap {
+        guard continueGeneratingBeyondMap else {
             precondition(index < densityMap.count, "Sector coordinates out of bounds... sorry this Galaxy _does_ have limits")
             return Sector.init(x, y, numStars: densityMap[index])
         }
