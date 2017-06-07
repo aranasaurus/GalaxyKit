@@ -11,23 +11,17 @@ import SceneKit
 import GalaxyKit
 
 class ViewController: UIViewController {
-    var sceneView: SCNView! { return view as? SCNView }
-    var sectorScene: Sector.Scene? { return sceneView.scene as? Sector.Scene }
-    @IBOutlet var starLabel: UILabel!
-    @IBOutlet var sectorLabel: UILabel!
-    @IBOutlet var temperatureLabel: UILabel!
-    @IBOutlet var massLabel: UILabel!
-    @IBOutlet var radiusLabel: UILabel!
+    fileprivate var sceneView: SCNView! { return view as? SCNView }
+    fileprivate var sectorScene: Sector.Scene? { return sceneView.scene as? Sector.Scene }
+    @IBOutlet fileprivate var starLabel: UILabel!
+    @IBOutlet fileprivate var sectorLabel: UILabel!
+    @IBOutlet fileprivate var temperatureLabel: UILabel!
+    @IBOutlet fileprivate var massLabel: UILabel!
+    @IBOutlet fileprivate var radiusLabel: UILabel!
     
-    let galaxy = Galaxy(continueGeneratingBeyondMap : true)
-    var sector: Sector! = .none {
-        didSet {
-            guard sector.x != oldValue?.x || sector.y != oldValue?.y else { return }
-            configureForSector(sector)
-        }
-    }
+    fileprivate let galaxy: Galaxy
     
-    var currentStar: Star? = .none {
+    fileprivate var currentStar: Star? {
         didSet {
             guard let currentStar = currentStar else { return }
             starLabel.text = currentStar.description + "(\(currentStar.coordinate))"
@@ -47,42 +41,52 @@ class ViewController: UIViewController {
         }
     }
     
-    var numberFormatter: NumberFormatter = {
+    fileprivate var numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.usesGroupingSeparator = true
         formatter.usesSignificantDigits = false
         return formatter
     }()
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.galaxy = Galaxy(continueGeneratingBeyondMap: true)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        self.galaxy = Galaxy(continueGeneratingBeyondMap: true)
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sector = galaxy[37, 47] // 37, 47 has a B0 in it!
+        let sector = galaxy[37, 47] // 37, 47 has a B0 in it!
         sceneView.backgroundColor = .black
         sceneView.autoenablesDefaultLighting = true
         sceneView.scene = Sector.Scene(sector: sector)
         
-        configureForSector(sector)
+        configure(for: sector)
     }
     
-    func configureForSector(_ sector: Sector) {
+    func configure(for sector: Sector) {
         sectorLabel.text = "Sector [\(sector.x), \(sector.y)] (\(sector.stars.count) systems)"
         sceneView.scene = Sector.Scene(sector: sector)
         currentStar = sectorScene?.focusedStar
     }
     
-    @IBAction func nextButtonTapped() {
+    @IBAction private func nextButtonTapped() {
         currentStar = sectorScene?.focusNextStar()
     }
     
-    @IBAction func prevButtonTapped() {
+    @IBAction private func prevButtonTapped() {
         currentStar = sectorScene?.focusPrevStar()
     }
     
-    @IBAction func changeSectorTapped() {
+    @IBAction private func changeSectorTapped() {
         let x = UInt(arc4random_uniform(64))
         let y = UInt(arc4random_uniform(64))
-        sector = galaxy[x, y]
+        configure(for: galaxy[x, y])
     }
 }
 
