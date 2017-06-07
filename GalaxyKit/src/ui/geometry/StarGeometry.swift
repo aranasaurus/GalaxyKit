@@ -10,7 +10,7 @@ import Foundation
 import SceneKit
 
 public extension Star {
-    public var material: SCNMaterial {
+    public func createMaterial() -> SCNMaterial {
         let m = SCNMaterial()
         
         m.locksAmbientWithDiffuse = true
@@ -18,10 +18,6 @@ public extension Star {
         
         m.cullMode = .back
         return m
-    }
-    
-    public var geometry: Geometry {
-        return Geometry(star: self)
     }
     
     public class Geometry: SCNSphere {
@@ -36,9 +32,9 @@ public extension Star {
             fatalError("init(coder:) has not been implemented")
         }
         
-        open func configureForStar(_ star: Star) {
+        public func configureForStar(_ star: Star) {
             radius = CGFloat(star.radius)
-            materials = [star.material]
+            materials = [star.createMaterial()]
         }
     }
 }

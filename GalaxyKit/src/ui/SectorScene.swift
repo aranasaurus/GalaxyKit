@@ -16,12 +16,12 @@ private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zo
 private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
 
 public extension Sector {
-    public var scene: Scene {
-        return Scene(sector: self)
-    }
-    
     public class Scene: SCNScene {
-        open let sector: Sector
+        let sector: Sector
+        public var focusedStar: Star {
+            return sortedStars[focusedIndex]
+        }
+
         fileprivate var focusedIndex: Int {
             didSet {
                 if focusedIndex >= sortedStars.count {
@@ -39,9 +39,6 @@ public extension Sector {
                 camera.camera?.focalSize = CGFloat(focusedStar.radius * 2.0)
                 SCNTransaction.commit()
             }
-        }
-        open var focusedStar: Star {
-            return sortedStars[focusedIndex]
         }
         fileprivate var sortedStars: [Star]
         fileprivate let sortByX: (_ a: Star, _ b: Star) -> Bool = { a, b in
@@ -94,13 +91,13 @@ public extension Sector {
         }
 
         @discardableResult
-        open func focusNextStar() -> Star {
+        public func focusNextStar() -> Star {
             focusedIndex += 1
             return focusedStar
         }
         
         @discardableResult
-        open func focusPrevStar() -> Star {
+        public func focusPrevStar() -> Star {
             focusedIndex -= 1
             return focusedStar
         }
