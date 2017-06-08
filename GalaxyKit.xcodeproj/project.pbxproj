@@ -110,14 +110,22 @@
 			path = "Galaxy Machine";
 			sourceTree = "<group>";
 		};
+		942EFFAB1EE9283800F69123 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				942EFFA01EE91E6F00F69123 /* GalaxyMachine.app */,
+				942EFFA51EE9206400F69123 /* GalaxyKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		946ED57B1C2E33F3004E03A3 = {
 			isa = PBXGroup;
 			children = (
 				942EFFA31EE91FB800F69123 /* Info.plist */,
 				942B6B101EE8E87800F07EEE /* samples */,
 				94E8403D1C2E356D007196E6 /* src */,
-				942EFFA01EE91E6F00F69123 /* GalaxyMachine.app */,
-				942EFFA51EE9206400F69123 /* GalaxyKit.framework */,
+				942EFFAB1EE9283800F69123 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -524,6 +532,7 @@
 				942EFF861EE91D5600F69123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		946ED57F1C2E33F3004E03A3 /* Build configuration list for PBXProject "GalaxyKit" */ = {
 			isa = XCConfigurationList;
