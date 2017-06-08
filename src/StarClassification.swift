@@ -6,7 +6,7 @@
 //  Copyright © 2016 Aranasaurus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension Star {
     /**

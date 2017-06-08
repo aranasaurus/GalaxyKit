@@ -1,3 +1,5 @@
+import UIKit
+
 public extension UInt64 {
     var uint32Value: UInt32 { return UInt32(self & UInt64(UInt32.max)) }
 }
