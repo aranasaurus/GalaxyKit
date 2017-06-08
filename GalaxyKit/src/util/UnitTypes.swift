@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let auPerParsec: Double = 648000 / M_PI
+private let auPerParsec: Double = 648000 / Double.pi
 private let lyPerParsec: Double = 3.26156
 private let auPerLightYear = auPerParsec / lyPerParsec
 private let solarRadiiPerAU: Double = 215

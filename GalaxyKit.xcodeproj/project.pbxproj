@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		942B6B0F1EE8E87800F07EEE /* Galaxy Machine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Galaxy Machine.xcodeproj"; sourceTree = "<group>"; };
 		944F746C1C31082E00C4DA8B /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		946ED5851C2E33F3004E03A3 /* GalaxyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GalaxyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		946ED5881C2E33F3004E03A3 /* GalaxyKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalaxyKit.h; sourceTree = "<group>"; };
@@ -71,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		942B6B101EE8E87800F07EEE /* sample */ = {
+			isa = PBXGroup;
+			children = (
+				942B6B0F1EE8E87800F07EEE /* Galaxy Machine.xcodeproj */,
+			);
+			path = sample;
+			sourceTree = "<group>";
+		};
 		944F746E1C31083500C4DA8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +95,7 @@
 				946ED5931C2E33F3004E03A3 /* GalaxyKitTests */,
 				944F746E1C31083500C4DA8B /* Frameworks */,
 				946ED5861C2E33F3004E03A3 /* Products */,
+				942B6B101EE8E87800F07EEE /* sample */,
 			);
 			sourceTree = "<group>";
 		};

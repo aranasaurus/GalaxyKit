@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9418ECA51C3D0D0600362128 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E27EB01C3D0CAF006CCE91 /* GalaxyKit.framework */; };
-		9418ECA61C3D0D0600362128 /* GalaxyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94E27EB01C3D0CAF006CCE91 /* GalaxyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		942B6B0E1EE8E84D00F07EEE /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942B6B0B1EE8E84900F07EEE /* GalaxyKit.framework */; };
 		944F74541C31071500C4DA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74531C31071500C4DA8B /* AppDelegate.swift */; };
 		944F74561C31071500C4DA8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F74551C31071500C4DA8B /* ViewController.swift */; };
 		944F74591C31071500C4DA8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 944F74571C31071500C4DA8B /* Main.storyboard */; };
@@ -17,23 +16,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9418ECA71C3D0D0600362128 /* PBXContainerItemProxy */ = {
+		942B6B0A1EE8E84900F07EEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 946ED5841C2E33F3004E03A3;
-			remoteInfo = GalaxyKit;
-		};
-		94E27EAF1C3D0CAF006CCE91 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+			containerPortal = 942B6B051EE8E84900F07EEE /* GalaxyKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 946ED5851C2E33F3004E03A3;
 			remoteInfo = GalaxyKit;
 		};
-		94E27EB11C3D0CAF006CCE91 /* PBXContainerItemProxy */ = {
+		942B6B0C1EE8E84900F07EEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+			containerPortal = 942B6B051EE8E84900F07EEE /* GalaxyKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 946ED58F1C2E33F3004E03A3;
 			remoteInfo = GalaxyKitTests;
@@ -47,7 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9418ECA61C3D0D0600362128 /* GalaxyKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942B6B051EE8E84900F07EEE /* GalaxyKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GalaxyKit.xcodeproj; path = ../GalaxyKit.xcodeproj; sourceTree = "<group>"; };
 		944F74501C31071500C4DA8B /* Galaxy Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galaxy Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		944F74531C31071500C4DA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		944F74551C31071500C4DA8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +54,6 @@
 		944F745A1C31071500C4DA8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		944F745D1C31071500C4DA8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		944F745F1C31071500C4DA8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GalaxyKit.xcodeproj; path = ../GalaxyKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,19 +61,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9418ECA51C3D0D0600362128 /* GalaxyKit.framework in Frameworks */,
+				942B6B0E1EE8E84D00F07EEE /* GalaxyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		942B6B041EE8E84800F07EEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				942B6B051EE8E84900F07EEE /* GalaxyKit.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		942B6B061EE8E84900F07EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				942B6B0B1EE8E84900F07EEE /* GalaxyKit.framework */,
+				942B6B0D1EE8E84900F07EEE /* GalaxyKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		944F74471C31071500C4DA8B = {
 			isa = PBXGroup;
 			children = (
-				944F74691C31074B00C4DA8B /* Frameworks */,
 				944F74521C31071500C4DA8B /* Galaxy Machine */,
 				944F74511C31071500C4DA8B /* Products */,
+				942B6B041EE8E84800F07EEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,23 +115,6 @@
 			path = "Galaxy Machine";
 			sourceTree = "<group>";
 		};
-		944F74691C31074B00C4DA8B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		94E27EAB1C3D0CAF006CCE91 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				94E27EB01C3D0CAF006CCE91 /* GalaxyKit.framework */,
-				94E27EB21C3D0CAF006CCE91 /* GalaxyKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,7 +130,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9418ECA81C3D0D0600362128 /* PBXTargetDependency */,
 			);
 			name = "Galaxy Machine";
 			productName = "Galaxy Machine";
@@ -175,8 +165,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 94E27EAB1C3D0CAF006CCE91 /* Products */;
-					ProjectRef = 94C938691C3CFCFE0084FC0A /* GalaxyKit.xcodeproj */;
+					ProductGroup = 942B6B061EE8E84900F07EEE /* Products */;
+					ProjectRef = 942B6B051EE8E84900F07EEE /* GalaxyKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -187,18 +177,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		94E27EB01C3D0CAF006CCE91 /* GalaxyKit.framework */ = {
+		942B6B0B1EE8E84900F07EEE /* GalaxyKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GalaxyKit.framework;
-			remoteRef = 94E27EAF1C3D0CAF006CCE91 /* PBXContainerItemProxy */;
+			remoteRef = 942B6B0A1EE8E84900F07EEE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		94E27EB21C3D0CAF006CCE91 /* GalaxyKitTests.xctest */ = {
+		942B6B0D1EE8E84900F07EEE /* GalaxyKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = GalaxyKitTests.xctest;
-			remoteRef = 94E27EB11C3D0CAF006CCE91 /* PBXContainerItemProxy */;
+			remoteRef = 942B6B0C1EE8E84900F07EEE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -227,14 +217,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9418ECA81C3D0D0600362128 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GalaxyKit;
-			targetProxy = 9418ECA71C3D0D0600362128 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		944F74571C31071500C4DA8B /* Main.storyboard */ = {
