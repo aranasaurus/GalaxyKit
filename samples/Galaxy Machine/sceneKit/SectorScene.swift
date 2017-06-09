@@ -14,7 +14,7 @@ import GalaxyKit
 private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
 private let sunsPerWindow = 6.0
 private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
-private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
+private let cameraDistance = Float(Length(value: 1, unit: .astronomicalUnits).converted(to: .solarRadii).value)
 
 extension Sector {
     class Scene: SCNScene {
@@ -37,7 +37,7 @@ extension Sector {
                 let constraint = SCNLookAtConstraint(target: node)
                 camera.constraints = [constraint]
                 camera.position = SCNVector3(x: node.position.x, y: node.position.y, z: node.position.z + cameraDistance)
-                camera.camera?.focalSize = CGFloat(focusedStar.radius * 2.0)
+                camera.camera?.focalSize = CGFloat(focusedStar.radius.converted(to: .solarRadii).value * 2.0)
                 SCNTransaction.commit()
             }
         }

@@ -20,74 +20,125 @@ public extension Star {
         case G
         case K
         case M
-        
-        var tempRange: (min: Kelvin, max: Kelvin) {
+
+        var minTemp: Temperature {
             switch self {
             case .O:
-                return (min: 30000, max: 52000)
+                return Temperature(value: 30000, unit: .kelvin)
             case .B:
-                return (min: 10000, max: 30000)
+                return Temperature(value: 10000, unit: .kelvin)
             case .A:
-                return (min: 7500, max: 10000)
+                return Temperature(value: 7500, unit: .kelvin)
             case .F:
-                return (min: 6000, max: 7500)
+                return Temperature(value: 6000, unit: .kelvin)
             case .G:
-                return (min: 5200, max: 6000)
+                return Temperature(value: 5200, unit: .kelvin)
             case .K:
-                return (min: 3700, max: 5200)
+                return Temperature(value: 3700, unit: .kelvin)
             case .M:
-                return (min: 2400, max: 3700)
+                return Temperature(value: 2400, unit: .kelvin)
             }
         }
-        func temperature(_ percentile: Double) -> Kelvin {
-            let range = tempRange
-            return Kelvin(doubleFromRange(Double(range.min), max: Double(range.max), percentile: percentile))
-        }
-        
-        var massRange: (min: SolarMass, max: SolarMass) {
+        var maxTemp: Temperature {
             switch self {
             case .O:
-                return (min: 16, max: 90)
+                return Temperature(value: 52000, unit: .kelvin)
             case .B:
-                return (min: 2.1, max: 16)
+                return Temperature(value: 30000, unit: .kelvin)
             case .A:
-                return (min: 1.4, max: 2.1)
+                return Temperature(value: 10000, unit: .kelvin)
             case .F:
-                return (min: 1.04, max: 1.4)
+                return Temperature(value: 7500, unit: .kelvin)
             case .G:
-                return (min: 0.8, max: 1.04)
+                return Temperature(value: 6000, unit: .kelvin)
             case .K:
-                return (min: 0.45, max: 0.8)
+                return Temperature(value: 5200, unit: .kelvin)
             case .M:
-                return (min: 0.08, max: 0.45)
+                return Temperature(value: 3700, unit: .kelvin)
             }
         }
-        func mass(_ percentile: Double) -> SolarMass {
-            let range = massRange
-            return SolarMass(doubleFromRange(range.min, max: range.max, percentile: percentile))
+        func temperature(_ percentile: Double) -> Temperature {
+            return Temperature.measurement(at: percentile, of: minTemp...maxTemp)
         }
-        
-        var radiusRange: (min: SolarRadius, max: SolarRadius) {
+
+        var minMass: Mass {
             switch self {
             case .O:
-                return (min: 6.6, max: 76)
+                return Mass(value: 16, unit: .solarMass)
             case .B:
-                return (min: 1.8, max: 6.6)
+                return Mass(value: 2, unit: .solarMass)
             case .A:
-                return (min: 1.4, max: 1.8)
+                return Mass(value: 1.4, unit: .solarMass)
             case .F:
-                return (min: 1.15, max: 1.4)
+                return Mass(value: 1.04, unit: .solarMass)
             case .G:
-                return (min: 0.96, max: 1.15)
+                return Mass(value: 0.8, unit: .solarMass)
             case .K:
-                return (min: 0.7, max: 0.96)
+                return Mass(value: 0.45, unit: .solarMass)
             case .M:
-                return (min: 0.33, max: 0.7)
+                return Mass(value: 0.08, unit: .solarMass)
             }
         }
-        func radius(_ percentile: Double) -> SolarRadius {
-            let range = radiusRange
-            return SolarRadius(doubleFromRange(range.min, max: range.max, percentile: percentile))
+        var maxMass: Mass {
+            switch self {
+            case .O:
+                return Mass(value: 90, unit: .solarMass)
+            case .B:
+                return Mass(value: 16, unit: .solarMass)
+            case .A:
+                return Mass(value: 2.1, unit: .solarMass)
+            case .F:
+                return Mass(value: 1.4, unit: .solarMass)
+            case .G:
+                return Mass(value: 1.04, unit: .solarMass)
+            case .K:
+                return Mass(value: 0.8, unit: .solarMass)
+            case .M:
+                return Mass(value: 0.45, unit: .solarMass)
+            }
+        }
+        func mass(_ percentile: Double) -> Mass {
+            return Mass.measurement(at: percentile, of: minMass...maxMass)
+        }
+
+        var minRadius: Length {
+            switch self {
+            case .O:
+                return Length(value: 6.6, unit: .solarRadii)
+            case .B:
+                return Length(value: 1.8, unit: .solarRadii)
+            case .A:
+                return Length(value: 1.4, unit: .solarRadii)
+            case .F:
+                return Length(value: 1.15, unit: .solarRadii)
+            case .G:
+                return Length(value: 0.96, unit: .solarRadii)
+            case .K:
+                return Length(value: 0.7, unit: .solarRadii)
+            case .M:
+                return Length(value: 0.33, unit: .solarRadii)
+            }
+        }
+        var maxRadius: Length {
+            switch self {
+            case .O:
+                return Length(value: 76, unit: .solarRadii)
+            case .B:
+                return Length(value: 6.6, unit: .solarRadii)
+            case .A:
+                return Length(value: 1.8, unit: .solarRadii)
+            case .F:
+                return Length(value: 1.4, unit: .solarRadii)
+            case .G:
+                return Length(value: 1.15, unit: .solarRadii)
+            case .K:
+                return Length(value: 0.96, unit: .solarRadii)
+            case .M:
+                return Length(value: 0.7, unit: .solarRadii)
+            }
+        }
+        func radius(_ percentile: Double) -> Length {
+            return Length.measurement(at: percentile, of: minRadius...maxRadius)
         }
         
         var luminosityRange: (min: SolarLuminosity, max: SolarLuminosity) {
@@ -109,13 +160,8 @@ public extension Star {
             }
         }
         func luminosity(_ percentile: Double) -> SolarLuminosity {
-            let range = luminosityRange
-            return SolarLuminosity(doubleFromRange(range.min, max: range.max, percentile: percentile))
-        }
-        
-        fileprivate func doubleFromRange(_ min: Double, max: Double, percentile: Double) -> Double {
-            let range = max - min
-            return min + (range * percentile)
+            let span = luminosityRange.max - luminosityRange.min
+            return luminosityRange.min + (span * percentile)
         }
         
         var referenceColor: (hue: CGFloat, saturation: CGFloat) {
@@ -143,6 +189,7 @@ public extension Star {
         }
         
         init(percentile: Double) {
+            precondition(percentile >= 0 && percentile <= 1)
             switch percentile {
             case percentile where percentile >= 0.9999997:
                 self = .O

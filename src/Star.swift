@@ -1,19 +1,15 @@
 import GameplayKit
 
-protocol Numeric {}
-extension Double: Numeric {}
-extension Int: Numeric {}
-
 public struct Star {
     public var classification: Classification
     public var subclass: Int
-    public var temperature: Kelvin
-    public var mass: SolarMass
-    public var radius: SolarRadius
+    public var temperature: Temperature
+    public var mass: Mass
+    public var radius: Length
     public var luminosity: SolarLuminosity
     public let coordinate: Coordinate
     
-    public var color: UIColor { return classification.color(temperature / classification.tempRange.max) }
+    public var color: UIColor { return classification.color(temperature.converted(to: .kelvin).value / classification.maxTemp.converted(to: .kelvin).value) }
     
     public init(randomSource: GKRandomSource, coordinate: Coordinate) {
         self.coordinate = coordinate
@@ -27,7 +23,7 @@ public struct Star {
         self.luminosity = classification.luminosity(attributesPercentile)
     }
     
-    public init(classification: Classification, subclass: Int, temperature: Kelvin, mass: SolarMass, radius: SolarRadius, luminosity: SolarLuminosity, coordinate: Coordinate) {
+    public init(classification: Classification, subclass: Int, temperature: Temperature, mass: Mass, radius: Length, luminosity: SolarLuminosity, coordinate: Coordinate) {
         self.coordinate = coordinate
         self.classification = classification
         self.subclass = subclass

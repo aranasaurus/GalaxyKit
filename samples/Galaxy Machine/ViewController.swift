@@ -25,28 +25,28 @@ class ViewController: UIViewController {
         didSet {
             guard let currentStar = currentStar else { return }
             starLabel.text = currentStar.description + "(\(currentStar.coordinate))"
-                
-            numberFormatter.minimumSignificantDigits = 6
-            
-            numberFormatter.maximumFractionDigits = 2
-            temperatureLabel.text = "temp: \(numberFormatter.string(from: NSNumber(value: currentStar.temperature))!) K"
-            
+
+            numberFormatter.maximumFractionDigits = 0
+            temperatureLabel.text = "temp: \(measurementFormatter.string(from: currentStar.temperature))"
+
             numberFormatter.maximumFractionDigits = 5
-            numberFormatter.minimumIntegerDigits = 1
-            massLabel.text = "mass: \(numberFormatter.string(from: NSNumber(value: currentStar.mass))!) M☉"
+            massLabel.text = "mass: \(measurementFormatter.string(from: currentStar.mass))"
             
-            radiusLabel.text = "rad:  \(numberFormatter.string(from: NSNumber(value: currentStar.radius))!) R☉"
+            radiusLabel.text = "rad:  \(measurementFormatter.string(from: currentStar.radius))"
             
             print(currentStar.debugDescription)
         }
     }
-    
-    fileprivate var numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.usesGroupingSeparator = true
-        formatter.usesSignificantDigits = false
+
+    fileprivate var measurementFormatter: MeasurementFormatter = {
+        let formatter = MeasurementFormatter()
+        formatter.unitOptions = [.providedUnit]
+        formatter.numberFormatter.minimumIntegerDigits = 1
+        formatter.numberFormatter.maximumSignificantDigits = 6
         return formatter
     }()
+
+    fileprivate var numberFormatter: NumberFormatter { return measurementFormatter.numberFormatter }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.galaxy = Galaxy(continueGeneratingBeyondMap: true)
