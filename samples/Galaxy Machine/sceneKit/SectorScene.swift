@@ -9,16 +9,17 @@
 import Foundation
 import SceneKit
 import QuartzCore
+import GalaxyKit
 
 private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
 private let sunsPerWindow = 6.0
 private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
 private let cameraDistance = Float(SolarRadius.solarRadius(au: AU(1)))
 
-public extension Sector {
-    public class Scene: SCNScene {
+extension Sector {
+    class Scene: SCNScene {
         let sector: Sector
-        public var focusedStar: Star {
+        var focusedStar: Star {
             return sortedStars[focusedIndex]
         }
 
@@ -60,7 +61,7 @@ public extension Sector {
         fileprivate let camera: SCNNode
         fileprivate var starNodes = [SCNNode]()
         
-        public init(sector: Sector) {
+        init(sector: Sector) {
             self.sector = sector
             let cam = SCNCamera()
             cam.automaticallyAdjustsZRange = true
@@ -86,18 +87,18 @@ public extension Sector {
             self.focusNextStar()
         }
 
-        required public init?(coder aDecoder: NSCoder) {
+        required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
 
         @discardableResult
-        public func focusNextStar() -> Star {
+        func focusNextStar() -> Star {
             focusedIndex += 1
             return focusedStar
         }
         
         @discardableResult
-        public func focusPrevStar() -> Star {
+        func focusPrevStar() -> Star {
             focusedIndex -= 1
             return focusedStar
         }

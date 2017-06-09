@@ -8,9 +8,10 @@
 
 import Foundation
 import SceneKit
+import GalaxyKit
 
-public extension Star {
-    public func createMaterial() -> SCNMaterial {
+extension Star {
+    func createMaterial() -> SCNMaterial {
         let m = SCNMaterial()
         
         m.locksAmbientWithDiffuse = true
@@ -20,19 +21,19 @@ public extension Star {
         return m
     }
     
-    public class Geometry: SCNSphere {
+    class Geometry: SCNSphere {
         
-        public init(star: Star) {
+        init(star: Star) {
             super.init()
             
             configureForStar(star)
         }
 
-        public required init?(coder aDecoder: NSCoder) {
+        required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
         
-        public func configureForStar(_ star: Star) {
+        func configureForStar(_ star: Star) {
             radius = CGFloat(star.radius)
             materials = [star.createMaterial()]
         }
