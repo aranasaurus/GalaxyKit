@@ -140,28 +140,45 @@ public extension Star {
         func radius(_ percentile: Double) -> Length {
             return Length.measurement(at: percentile, of: minRadius...maxRadius)
         }
-        
-        var luminosityRange: (min: SolarLuminosity, max: SolarLuminosity) {
+
+        var minLuminosity: Luminosity {
             switch self {
             case .O:
-                return (min: 30000, max: 1000000)
+                return Luminosity(value: 30000, unit: .solarLuminosity)
             case .B:
-                return (min: 25, max: 30000)
+                return Luminosity(value: 25, unit: .solarLuminosity)
             case .A:
-                return (min: 5, max: 25)
+                return Luminosity(value: 5, unit: .solarLuminosity)
             case .F:
-                return (min: 1.5, max: 5)
+                return Luminosity(value: 1.5, unit: .solarLuminosity)
             case .G:
-                return (min: 0.6, max: 1.5)
+                return Luminosity(value: 0.6, unit: .solarLuminosity)
             case .K:
-                return (min: 0.08, max: 0.6)
+                return Luminosity(value: 0.08, unit: .solarLuminosity)
             case .M:
-                return (min: 0.0, max: 0.08)
+                return Luminosity(value: 0.0, unit: .solarLuminosity)
             }
         }
-        func luminosity(_ percentile: Double) -> SolarLuminosity {
-            let span = luminosityRange.max - luminosityRange.min
-            return luminosityRange.min + (span * percentile)
+        var maxLuminosity: Luminosity {
+            switch self {
+            case .O:
+                return Luminosity(value: 1000000, unit: .solarLuminosity)
+            case .B:
+                return Luminosity(value: 30000, unit: .solarLuminosity)
+            case .A:
+                return Luminosity(value: 25, unit: .solarLuminosity)
+            case .F:
+                return Luminosity(value: 5, unit: .solarLuminosity)
+            case .G:
+                return Luminosity(value: 1.5, unit: .solarLuminosity)
+            case .K:
+                return Luminosity(value: 0.6, unit: .solarLuminosity)
+            case .M:
+                return Luminosity(value: 0.08, unit: .solarLuminosity)
+            }
+        }
+        func luminosity(_ percentile: Double) -> Luminosity {
+            return Luminosity.measurement(at: percentile, of: minLuminosity...maxLuminosity)
         }
         
         var referenceColor: (hue: CGFloat, saturation: CGFloat) {
@@ -209,4 +226,3 @@ public extension Star {
         }
     }
 }
-    

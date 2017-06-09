@@ -6,7 +6,7 @@ public struct Star {
     public var temperature: Temperature
     public var mass: Mass
     public var radius: Length
-    public var luminosity: SolarLuminosity
+    public var luminosity: Luminosity
     public let coordinate: Coordinate
     
     public var color: UIColor { return classification.color(temperature.converted(to: .kelvin).value / classification.maxTemp.converted(to: .kelvin).value) }
@@ -23,7 +23,7 @@ public struct Star {
         self.luminosity = classification.luminosity(attributesPercentile)
     }
     
-    public init(classification: Classification, subclass: Int, temperature: Temperature, mass: Mass, radius: Length, luminosity: SolarLuminosity, coordinate: Coordinate) {
+    public init(classification: Classification, subclass: Int, temperature: Temperature, mass: Mass, radius: Length, luminosity: Luminosity, coordinate: Coordinate) {
         self.coordinate = coordinate
         self.classification = classification
         self.subclass = subclass

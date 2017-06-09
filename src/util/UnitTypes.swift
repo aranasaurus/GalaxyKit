@@ -11,6 +11,7 @@ import Foundation
 public typealias Length = Measurement<UnitLength>
 public typealias Temperature = Measurement<UnitTemperature>
 public typealias Mass = Measurement<UnitMass>
+public typealias Luminosity = Measurement<UnitRadiantFlux>
 
 private let solarRadiiPerAU: Double = 215
 
@@ -44,10 +45,12 @@ public extension UnitLength {
 }
 
 // TODO: Make a UnitType for this.
-/**
- Unit of radiant flux (power emitted in the form of photons) conventionally used by astronomers to measure the luminosity of stars. 
- Defined in terms of the Sun's output.
- Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_luminosity).
-*/
-public typealias SolarLuminosity = Double
+public class UnitRadiantFlux: UnitPower {
+    /**
+     Unit of radiant flux (power emitted in the form of photons) conventionally used by astronomers to measure the luminosity of stars.
+     Defined in terms of the Sun's output.
+     Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_luminosity).
+    */
+    public static let solarLuminosity: UnitRadiantFlux = UnitRadiantFlux(symbol: "L☉", converter: UnitConverterLinear(coefficient: 3.828e26))
+}
 
