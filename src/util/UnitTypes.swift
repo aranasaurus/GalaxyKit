@@ -44,7 +44,6 @@ public extension UnitLength {
     }
 }
 
-// TODO: Make a UnitType for this.
 public class UnitRadiantFlux: UnitPower {
     /**
      Unit of radiant flux (power emitted in the form of photons) conventionally used by astronomers to measure the luminosity of stars.

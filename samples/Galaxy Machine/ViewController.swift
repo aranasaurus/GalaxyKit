@@ -13,12 +13,14 @@ import GalaxyKit
 class ViewController: UIViewController {
     fileprivate var sceneView: SCNView! { return view as? SCNView }
     fileprivate var sectorScene: Sector.Scene? { return sceneView.scene as? Sector.Scene }
+
     @IBOutlet fileprivate var starLabel: UILabel!
     @IBOutlet fileprivate var sectorLabel: UILabel!
     @IBOutlet fileprivate var temperatureLabel: UILabel!
     @IBOutlet fileprivate var massLabel: UILabel!
     @IBOutlet fileprivate var radiusLabel: UILabel!
-    
+    @IBOutlet fileprivate var luminosityLabel: UILabel!
+
     fileprivate let galaxy: Galaxy
     
     fileprivate var currentStar: Star? {
@@ -26,27 +28,25 @@ class ViewController: UIViewController {
             guard let currentStar = currentStar else { return }
             starLabel.text = currentStar.description + "(\(currentStar.coordinate))"
 
-            numberFormatter.maximumFractionDigits = 0
-            temperatureLabel.text = "temp: \(measurementFormatter.string(from: currentStar.temperature))"
-
-            numberFormatter.maximumFractionDigits = 5
-            massLabel.text = "mass: \(measurementFormatter.string(from: currentStar.mass))"
-            
-            radiusLabel.text = "rad:  \(measurementFormatter.string(from: currentStar.radius))"
+            temperatureLabel.text = "temp: \(formatter.string(from: currentStar.temperature))"
+            luminosityLabel.text = "lumi: \(formatter.string(from: currentStar.luminosity))"
+            massLabel.text = "mass: \(formatter.string(from: currentStar.mass))"
+            radiusLabel.text = "rad:  \(formatter.string(from: currentStar.radius))"
             
             print(currentStar.debugDescription)
         }
     }
 
-    fileprivate var measurementFormatter: MeasurementFormatter = {
+    fileprivate var formatter: MeasurementFormatter = {
         let formatter = MeasurementFormatter()
         formatter.unitOptions = [.providedUnit]
-        formatter.numberFormatter.minimumIntegerDigits = 1
-        formatter.numberFormatter.maximumSignificantDigits = 6
+        formatter.numberFormatter.usesSignificantDigits = true
+        formatter.numberFormatter.minimumSignificantDigits = 4
+        formatter.numberFormatter.maximumSignificantDigits = 5
         return formatter
     }()
 
-    fileprivate var numberFormatter: NumberFormatter { return measurementFormatter.numberFormatter }
+    fileprivate var numberFormatter: NumberFormatter { return formatter.numberFormatter }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.galaxy = Galaxy(continueGeneratingBeyondMap: true)
