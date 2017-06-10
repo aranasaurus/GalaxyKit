@@ -21,6 +21,11 @@ public extension Measurement {
         return range.lowerBound + (span * percentage)
     }
 }
+public extension Measurement where UnitType : Dimension {
+    public func `in`(_ otherUnit: UnitType) -> Double {
+        return converted(to: otherUnit).value
+    }
+}
 
 public extension UnitMass {
     /**
@@ -52,4 +57,3 @@ public class UnitRadiantFlux: UnitPower {
     */
     public static let solarLuminosity: UnitRadiantFlux = UnitRadiantFlux(symbol: "L☉", converter: UnitConverterLinear(coefficient: 3.828e26))
 }
-
