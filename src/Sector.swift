@@ -1,6 +1,6 @@
 import GameplayKit
 
-public struct Sector {
+public class Sector {
     public let x: UInt
     public let y: UInt
     public let stars: [Star]

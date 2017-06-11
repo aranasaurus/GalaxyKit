@@ -11,101 +11,86 @@ import SceneKit
 import QuartzCore
 import GalaxyKit
 
-private let angularDiameterOfSunFromEarth = 1.0/3600.0 * 1920.0
-private let sunsPerWindow = 6.0
-private let fov = angularDiameterOfSunFromEarth * sunsPerWindow // Show stars zoomed such that you could see x stars the size of our Sun side by side.
-private let cameraDistance = Float(Length(value: 1, unit: .astronomicalUnits).converted(to: .solarRadii).value)
-
 extension Sector {
-    class Scene: SCNScene {
+    public class Scene: SCNScene {
         let sector: Sector
-        var focusedStar: Star {
-            return sortedStars[focusedIndex]
-        }
+        let node: Node
+        let cameraNode: SCNNode
 
-        fileprivate var focusedIndex: Int {
-            didSet {
-                if focusedIndex >= sortedStars.count {
-                    focusedIndex = 0
-                } else if focusedIndex < 0 {
-                    focusedIndex = sortedStars.count - 1
-                }
-                
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 2
-                let node = starNodes[focusedIndex]
-                let constraint = SCNLookAtConstraint(target: node)
-                camera.constraints = [constraint]
-                camera.position = SCNVector3(x: node.position.x, y: node.position.y, z: node.position.z + cameraDistance)
-                camera.camera?.focalSize = CGFloat(focusedStar.radius.converted(to: .solarRadii).value * 2.0)
-                SCNTransaction.commit()
-            }
-        }
-        fileprivate var sortedStars: [Star]
-        fileprivate let sortByX: (_ a: Star, _ b: Star) -> Bool = { a, b in
-            if a.coordinate.x == b.coordinate.x {
-                if a.coordinate.z == b.coordinate.z {
-                    return a.coordinate.y < b.coordinate.y
-                }
-                return a.coordinate.z < b.coordinate.z
-            }
-            return a.coordinate.x < b.coordinate.x
-        }
-        fileprivate let sortByDistanceToZero: (_ a: Star, _ b: Star) -> Bool = { a, b in
-            return a.coordinate.quickDistanceTo(Coordinate.zero) < b.coordinate.quickDistanceTo(Coordinate.zero)
-        }
-        fileprivate let sortByMass: (_ a: Star, _ b: Star) -> Bool = { a, b in
-            return a.mass > b.mass
-        }
-        
-        fileprivate let camera: SCNNode
-        fileprivate var starNodes = [SCNNode]()
-        
-        init(sector: Sector) {
+        init(sector: Sector, in galaxy: Galaxy? = nil) {
             self.sector = sector
-            let cam = SCNCamera()
-            cam.automaticallyAdjustsZRange = true
-            cam.xFov = fov
-            cam.focalDistance = CGFloat(cameraDistance)
-            self.camera = SCNNode()
-            self.camera.camera = cam
-            self.camera.position = SCNVector3(x: 0, y: 0, z: 0)
-            self.sortedStars = sector.stars.sorted(by: sortByX)
-            self.focusedIndex = sortedStars.count - 1
-            
+            self.node = Node(sector: sector)
+            self.cameraNode = SCNNode()
+
+            let camera = SCNCamera()
+            camera.automaticallyAdjustsZRange = true
+            cameraNode.camera = camera
+
             super.init()
-            
-            for star in sortedStars {
-                let geom = Star.Geometry(star: star)
-                let node = SCNNode(geometry: geom)
-                node.position = SCNVector3.vectorFromCoordinate(star.coordinate)
-                rootNode.addChildNode(node)
-                starNodes.append(node)
-            }
-            
-            rootNode.addChildNode(camera)
-            self.focusNextStar()
+
+            rootNode.addChildNode(node)
+            rootNode.addChildNode(cameraNode)
+
+            cameraNode.position = SCNVector3(0, 0, 128)
+            cameraNode.constraints = [SCNLookAtConstraint(target: node)]
+            cameraNode.constraints = []
+
+            guard let galaxy = galaxy else { return }
+
+            generateNeighbor(-2, -1, in: galaxy)
+            generateNeighbor(-2, 0, in: galaxy)
+            generateNeighbor(-2, 1, in: galaxy)
+            generateNeighbor(-1, -1, in: galaxy)
+            generateNeighbor(-1, 0, in: galaxy)
+            generateNeighbor(-1, 1, in: galaxy)
+
+            generateNeighbor(0, -1, in: galaxy)
+            generateNeighbor(0, 1, in: galaxy)
+
+            generateNeighbor(1, -1, in: galaxy)
+            generateNeighbor(1, 0, in: galaxy)
+            generateNeighbor(1, 1, in: galaxy)
+            generateNeighbor(2, -1, in: galaxy)
+            generateNeighbor(2, 0, in: galaxy)
+            generateNeighbor(2, 1, in: galaxy)
         }
 
-        required init?(coder aDecoder: NSCoder) {
+        public required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
 
-        @discardableResult
-        func focusNextStar() -> Star {
-            focusedIndex += 1
-            return focusedStar
+        private func generateNeighbor(_ xMod: Int, _ yMod: Int, in galaxy: Galaxy) {
+            let x = (sector.x > 0 || xMod >= 0) ? UInt(Int(sector.x) + xMod) : sector.x
+            let y = (sector.y > 0 || yMod >= 0) ? UInt(Int(sector.y) + yMod) : sector.y
+            if let neighbor = galaxy.sector(at: x, y) {
+                let neighborNode = Node(sector: neighbor)
+                neighborNode.position = SCNVector3(256 * xMod, 256 * yMod, 0)
+                rootNode.addChildNode(neighborNode)
+            }
         }
-        
-        @discardableResult
-        func focusPrevStar() -> Star {
-            focusedIndex -= 1
-            return focusedStar
+    }
+
+    public class Node: SCNNode {
+        let sector: Sector
+        public init(sector: Sector) {
+            self.sector = sector
+            super.init()
+
+            for star in sector.stars {
+                let geom = Star.Geometry(star: star)
+                let node = SCNNode(geometry: geom)
+                node.position = SCNVector3.vectorFromCoordinate(star.coordinate)
+                addChildNode(node)
+            }
+        }
+
+        public required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
         }
     }
 }
 
-extension SCNVector3 {
+fileprivate extension SCNVector3 {
     static func vectorFromCoordinate(_ coord: Coordinate) -> SCNVector3 {
         return SCNVector3(x: Float(coord.x), y: Float(coord.y), z: Float(coord.z))
     }

@@ -23,22 +23,26 @@ public class Galaxy {
         return distribution
     }()
 
-    public subscript(x: UInt, y: UInt) -> Sector {
-        let index = Int(x + y)
-        guard continueGeneratingBeyondMap else {
-            precondition(index < densityMap.count, "Sector coordinates out of bounds... sorry this Galaxy _does_ have limits")
-            return Sector.init(x, y, numStars: densityMap[index])
-        }
-        
-        if index < densityMap.count {
-            return Sector(x, y, numStars: densityMap[index])
-        }
-        
-        return Sector(x, y, numStars: UInt(self.densityDistribution.nextInt()))
-    }
-    
     public init(densityMap: [UInt] = [], continueGeneratingBeyondMap: Bool = false) {
         self.densityMap = densityMap
         self.continueGeneratingBeyondMap = continueGeneratingBeyondMap
+    }
+
+    public subscript(x: UInt, y: UInt) -> Sector {
+        guard let sector = sector(at: x, y) else {
+            preconditionFailure("Sector coordinates out of bounds... sorry this Galaxy _does_ have limits")
+        }
+
+        return sector
+    }
+    
+    public func sector(at x: UInt, _ y: UInt) -> Sector? {
+        let index = Int(x + y)
+
+        guard index >= densityMap.count else {
+            return Sector(x, y, numStars: densityMap[index])
+        }
+
+        return continueGeneratingBeyondMap ? Sector(x, y, numStars: UInt(self.densityDistribution.nextInt())) : nil
     }
 }
