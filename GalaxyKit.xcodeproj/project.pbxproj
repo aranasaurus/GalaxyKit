@@ -19,7 +19,6 @@
 		94DE5B891EEA318400B6012F /* StarGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489CB2D1C31DF070016E32B /* StarGeometry.swift */; };
 		94DE5B8A1EEA318A00B6012F /* SectorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8AFDD1C325C040085D8E8 /* SectorScene.swift */; };
 		94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840311C2E34BF007196E6 /* Coordinate.swift */; };
-		94E840381C2E34BF007196E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840321C2E34BF007196E6 /* Extensions.swift */; };
 		94E840391C2E34BF007196E6 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840331C2E34BF007196E6 /* Sector.swift */; };
 		94E8403B1C2E34BF007196E6 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840351C2E34BF007196E6 /* Star.swift */; };
 		94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */; };
@@ -64,7 +63,6 @@
 		94C938641C3CD91E0084FC0A /* Galaxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galaxy.swift; sourceTree = "<group>"; };
 		94D8AFDD1C325C040085D8E8 /* SectorScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectorScene.swift; sourceTree = "<group>"; };
 		94E840311C2E34BF007196E6 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		94E840321C2E34BF007196E6 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		94E840331C2E34BF007196E6 /* Sector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		94E840351C2E34BF007196E6 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTypes.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				94E840311C2E34BF007196E6 /* Coordinate.swift */,
-				94E840321C2E34BF007196E6 /* Extensions.swift */,
 				94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */,
 			);
 			path = util;
@@ -226,17 +223,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Aranasaurus;
 				TargetAttributes = {
 					942EFF5C1EE91D5600F69123 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = JCYYKWU6KX;
+						LastSwiftMigration = 0930;
 					};
 					946ED5841C2E33F3004E03A3 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = JCYYKWU6KX;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -297,7 +295,6 @@
 			files = (
 				94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */,
 				94C938651C3CD91E0084FC0A /* Galaxy.swift in Sources */,
-				94E840381C2E34BF007196E6 /* Extensions.swift in Sources */,
 				94C938631C3CD87B0084FC0A /* StarClassification.swift in Sources */,
 				94E8403B1C2E34BF007196E6 /* Star.swift in Sources */,
 				94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */,
@@ -355,12 +352,11 @@
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/samples/Galaxy Machine/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -385,12 +381,11 @@
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/samples/Galaxy Machine/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -403,13 +398,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -432,12 +437,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -452,13 +457,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -475,10 +490,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -489,7 +505,7 @@
 		946ED59A1C2E33F3004E03A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -501,14 +517,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		946ED59B1C2E33F3004E03A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JCYYKWU6KX;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -520,7 +535,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

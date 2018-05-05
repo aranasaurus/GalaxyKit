@@ -13,47 +13,47 @@ public extension Star {
      The classification of a star. Based primarily on [this wikipedia page](https://en.wikipedia.org/wiki/Stellar_classification#Harvard_spectral_classification).
      */
     public enum Classification: Int {
-        case O
-        case B
-        case A
-        case F
-        case G
-        case K
-        case M
+        case o
+        case b
+        case a
+        case f
+        case g
+        case k
+        case m
 
         var minTemp: Temperature {
             switch self {
-            case .O:
+            case .o:
                 return Temperature(value: 30000, unit: .kelvin)
-            case .B:
+            case .b:
                 return Temperature(value: 10000, unit: .kelvin)
-            case .A:
+            case .a:
                 return Temperature(value: 7500, unit: .kelvin)
-            case .F:
+            case .f:
                 return Temperature(value: 6000, unit: .kelvin)
-            case .G:
+            case .g:
                 return Temperature(value: 5200, unit: .kelvin)
-            case .K:
+            case .k:
                 return Temperature(value: 3700, unit: .kelvin)
-            case .M:
+            case .m:
                 return Temperature(value: 2400, unit: .kelvin)
             }
         }
         var maxTemp: Temperature {
             switch self {
-            case .O:
+            case .o:
                 return Temperature(value: 52000, unit: .kelvin)
-            case .B:
+            case .b:
                 return Temperature(value: 30000, unit: .kelvin)
-            case .A:
+            case .a:
                 return Temperature(value: 10000, unit: .kelvin)
-            case .F:
+            case .f:
                 return Temperature(value: 7500, unit: .kelvin)
-            case .G:
+            case .g:
                 return Temperature(value: 6000, unit: .kelvin)
-            case .K:
+            case .k:
                 return Temperature(value: 5200, unit: .kelvin)
-            case .M:
+            case .m:
                 return Temperature(value: 3700, unit: .kelvin)
             }
         }
@@ -63,37 +63,37 @@ public extension Star {
 
         var minMass: Mass {
             switch self {
-            case .O:
+            case .o:
                 return Mass(value: 16, unit: .solarMass)
-            case .B:
+            case .b:
                 return Mass(value: 2, unit: .solarMass)
-            case .A:
+            case .a:
                 return Mass(value: 1.4, unit: .solarMass)
-            case .F:
+            case .f:
                 return Mass(value: 1.04, unit: .solarMass)
-            case .G:
+            case .g:
                 return Mass(value: 0.8, unit: .solarMass)
-            case .K:
+            case .k:
                 return Mass(value: 0.45, unit: .solarMass)
-            case .M:
+            case .m:
                 return Mass(value: 0.08, unit: .solarMass)
             }
         }
         var maxMass: Mass {
             switch self {
-            case .O:
+            case .o:
                 return Mass(value: 90, unit: .solarMass)
-            case .B:
+            case .b:
                 return Mass(value: 16, unit: .solarMass)
-            case .A:
+            case .a:
                 return Mass(value: 2.1, unit: .solarMass)
-            case .F:
+            case .f:
                 return Mass(value: 1.4, unit: .solarMass)
-            case .G:
+            case .g:
                 return Mass(value: 1.04, unit: .solarMass)
-            case .K:
+            case .k:
                 return Mass(value: 0.8, unit: .solarMass)
-            case .M:
+            case .m:
                 return Mass(value: 0.45, unit: .solarMass)
             }
         }
@@ -103,37 +103,37 @@ public extension Star {
 
         var minRadius: Length {
             switch self {
-            case .O:
+            case .o:
                 return Length(value: 6.6, unit: .solarRadii)
-            case .B:
+            case .b:
                 return Length(value: 1.8, unit: .solarRadii)
-            case .A:
+            case .a:
                 return Length(value: 1.4, unit: .solarRadii)
-            case .F:
+            case .f:
                 return Length(value: 1.15, unit: .solarRadii)
-            case .G:
+            case .g:
                 return Length(value: 0.96, unit: .solarRadii)
-            case .K:
+            case .k:
                 return Length(value: 0.7, unit: .solarRadii)
-            case .M:
+            case .m:
                 return Length(value: 0.33, unit: .solarRadii)
             }
         }
         var maxRadius: Length {
             switch self {
-            case .O:
+            case .o:
                 return Length(value: 76, unit: .solarRadii)
-            case .B:
+            case .b:
                 return Length(value: 6.6, unit: .solarRadii)
-            case .A:
+            case .a:
                 return Length(value: 1.8, unit: .solarRadii)
-            case .F:
+            case .f:
                 return Length(value: 1.4, unit: .solarRadii)
-            case .G:
+            case .g:
                 return Length(value: 1.15, unit: .solarRadii)
-            case .K:
+            case .k:
                 return Length(value: 0.96, unit: .solarRadii)
-            case .M:
+            case .m:
                 return Length(value: 0.7, unit: .solarRadii)
             }
         }
@@ -143,37 +143,37 @@ public extension Star {
 
         var minLuminosity: Luminosity {
             switch self {
-            case .O:
+            case .o:
                 return Luminosity(value: 30000, unit: .solarLuminosity)
-            case .B:
+            case .b:
                 return Luminosity(value: 25, unit: .solarLuminosity)
-            case .A:
+            case .a:
                 return Luminosity(value: 5, unit: .solarLuminosity)
-            case .F:
+            case .f:
                 return Luminosity(value: 1.5, unit: .solarLuminosity)
-            case .G:
+            case .g:
                 return Luminosity(value: 0.6, unit: .solarLuminosity)
-            case .K:
+            case .k:
                 return Luminosity(value: 0.08, unit: .solarLuminosity)
-            case .M:
+            case .m:
                 return Luminosity(value: 0.0, unit: .solarLuminosity)
             }
         }
         var maxLuminosity: Luminosity {
             switch self {
-            case .O:
+            case .o:
                 return Luminosity(value: 1000000, unit: .solarLuminosity)
-            case .B:
+            case .b:
                 return Luminosity(value: 30000, unit: .solarLuminosity)
-            case .A:
+            case .a:
                 return Luminosity(value: 25, unit: .solarLuminosity)
-            case .F:
+            case .f:
                 return Luminosity(value: 5, unit: .solarLuminosity)
-            case .G:
+            case .g:
                 return Luminosity(value: 1.5, unit: .solarLuminosity)
-            case .K:
+            case .k:
                 return Luminosity(value: 0.6, unit: .solarLuminosity)
-            case .M:
+            case .m:
                 return Luminosity(value: 0.08, unit: .solarLuminosity)
             }
         }
@@ -183,19 +183,19 @@ public extension Star {
         
         var referenceColor: (hue: CGFloat, saturation: CGFloat) {
             switch self {
-            case .O:
+            case .o:
                 return (hue: 0.639, saturation: 0.457)
-            case .B:
+            case .b:
                 return (hue: 0.634, saturation: 0.398)
-            case .A:
+            case .a:
                 return (hue: 0.628, saturation: 0.251)
-            case .F:
+            case .f:
                 return (hue: 0.741, saturation: 0.035)
-            case .G:
+            case .g:
                 return (hue: 0.089, saturation: 0.11)
-            case .K:
+            case .k:
                 return (hue: 0.092, saturation: 0.35)
-            case .M:
+            case .m:
                 return (hue: 0.086, saturation: 0.636)
             }
         }
@@ -209,19 +209,19 @@ public extension Star {
             precondition(percentile >= 0 && percentile <= 1)
             switch percentile {
             case percentile where percentile >= 0.9999997:
-                self = .O
+                self = .o
             case percentile where percentile >= 0.9987:
-                self = .B
+                self = .b
             case percentile where percentile >= 0.994:
-                self = .A
+                self = .a
             case percentile where percentile >= 0.97:
-                self = .F
+                self = .f
             case percentile where percentile >= 0.924:
-                self = .G
+                self = .g
             case percentile where percentile >= 0.879:
-                self = .K
+                self = .k
             default:
-                self = .M
+                self = .m
             }
         }
     }

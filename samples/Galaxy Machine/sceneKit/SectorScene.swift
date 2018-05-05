@@ -60,8 +60,8 @@ extension Sector {
         }
 
         private func generateNeighbor(_ xMod: Int, _ yMod: Int, in galaxy: Galaxy) {
-            let x = (sector.x > 0 || xMod >= 0) ? UInt(Int(sector.x) + xMod) : sector.x
-            let y = (sector.y > 0 || yMod >= 0) ? UInt(Int(sector.y) + yMod) : sector.y
+            let x = UInt(max(Int(sector.x) + xMod, 0))
+            let y = UInt(max(Int(sector.y) + yMod, 0))
             if let neighbor = galaxy.sector(at: x, y) {
                 let neighborNode = Node(sector: neighbor)
                 neighborNode.position = SCNVector3(256 * xMod, 256 * yMod, 0)
