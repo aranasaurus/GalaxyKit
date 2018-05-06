@@ -22,10 +22,19 @@
 		94E840391C2E34BF007196E6 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840331C2E34BF007196E6 /* Sector.swift */; };
 		94E8403B1C2E34BF007196E6 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840351C2E34BF007196E6 /* Star.swift */; };
 		94EB4F8C1C33A7DF00170FBB /* UnitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */; };
+		F9D01EB6209F6A06004DBBA6 /* GalaxyKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D01EB5209F6A06004DBBA6 /* GalaxyKitTests.swift */; };
+		F9D01EB8209F6A06004DBBA6 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942EFFA51EE9206400F69123 /* GalaxyKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		942EFFA11EE91ED900F69123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 946ED57C1C2E33F3004E03A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 946ED5841C2E33F3004E03A3;
+			remoteInfo = GalaxyKit;
+		};
+		F9D01EB9209F6A06004DBBA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 946ED57C1C2E33F3004E03A3 /* Project object */;
 			proxyType = 1;
@@ -66,6 +75,9 @@
 		94E840331C2E34BF007196E6 /* Sector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		94E840351C2E34BF007196E6 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTypes.swift; sourceTree = "<group>"; };
+		F9D01EB5209F6A06004DBBA6 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
+		F9D01EB7209F6A06004DBBA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9D01EEC209F7BE0004DBBA6 /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GalaxyKitTests.xctest; path = "/Users/ra1017/src/aranasaurus/GalaxyKit/build/Debug-iphoneos/GalaxyKitTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D01EB0209F6A06004DBBA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D01EB8209F6A06004DBBA6 /* GalaxyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +144,7 @@
 				942EFFA31EE91FB800F69123 /* Info.plist */,
 				942B6B101EE8E87800F07EEE /* samples */,
 				94E8403D1C2E356D007196E6 /* src */,
+				F9D01EB4209F6A06004DBBA6 /* GalaxyKitTests */,
 				942EFFAB1EE9283800F69123 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,6 +185,15 @@
 				94C938621C3CD87B0084FC0A /* StarClassification.swift */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		F9D01EB4209F6A06004DBBA6 /* GalaxyKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9D01EB5209F6A06004DBBA6 /* GalaxyKitTests.swift */,
+				F9D01EB7209F6A06004DBBA6 /* Info.plist */,
+			);
+			path = GalaxyKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,13 +246,31 @@
 			productReference = 942EFFA51EE9206400F69123 /* GalaxyKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F9D01EB2209F6A06004DBBA6 /* GalaxyKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9D01EBD209F6A06004DBBA6 /* Build configuration list for PBXNativeTarget "GalaxyKitTests" */;
+			buildPhases = (
+				F9D01EAF209F6A06004DBBA6 /* Sources */,
+				F9D01EB0209F6A06004DBBA6 /* Frameworks */,
+				F9D01EB1209F6A06004DBBA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9D01EBA209F6A06004DBBA6 /* PBXTargetDependency */,
+			);
+			name = GalaxyKitTests;
+			productName = GalaxyKitTests;
+			productReference = F9D01EEC209F7BE0004DBBA6 /* GalaxyKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		946ED57C1C2E33F3004E03A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Aranasaurus;
 				TargetAttributes = {
@@ -235,6 +283,11 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = JCYYKWU6KX;
 						LastSwiftMigration = 0930;
+					};
+					F9D01EB2209F6A06004DBBA6 = {
+						CreatedOnToolsVersion = 9.3;
+						DevelopmentTeam = 356X99UH85;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -253,6 +306,7 @@
 			targets = (
 				946ED5841C2E33F3004E03A3 /* GalaxyKit */,
 				942EFF5C1EE91D5600F69123 /* GalaxyMachine */,
+				F9D01EB2209F6A06004DBBA6 /* GalaxyKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +323,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		946ED5831C2E33F3004E03A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9D01EB1209F6A06004DBBA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,6 +363,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9D01EAF209F6A06004DBBA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9D01EB6209F6A06004DBBA6 /* GalaxyKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -309,6 +378,11 @@
 			isa = PBXTargetDependency;
 			target = 946ED5841C2E33F3004E03A3 /* GalaxyKit */;
 			targetProxy = 942EFFA11EE91ED900F69123 /* PBXContainerItemProxy */;
+		};
+		F9D01EBA209F6A06004DBBA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 946ED5841C2E33F3004E03A3 /* GalaxyKit */;
+			targetProxy = F9D01EB9209F6A06004DBBA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -538,6 +612,52 @@
 			};
 			name = Release;
 		};
+		F9D01EBB209F6A06004DBBA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 356X99UH85;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = GalaxyKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9D01EBC209F6A06004DBBA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 356X99UH85;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = GalaxyKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,6 +684,15 @@
 			buildConfigurations = (
 				946ED59A1C2E33F3004E03A3 /* Debug */,
 				946ED59B1C2E33F3004E03A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9D01EBD209F6A06004DBBA6 /* Build configuration list for PBXNativeTarget "GalaxyKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9D01EBB209F6A06004DBBA6 /* Debug */,
+				F9D01EBC209F6A06004DBBA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

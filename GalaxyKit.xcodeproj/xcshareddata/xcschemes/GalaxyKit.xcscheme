@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F9D01EB2209F6A06004DBBA6"
+               BuildableName = "GalaxyKitTests.xctest"
+               BlueprintName = "GalaxyKitTests"
+               ReferencedContainer = "container:GalaxyKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "946ED5841C2E33F3004E03A3"
+            BuildableName = "GalaxyKit.framework"
+            BlueprintName = "GalaxyKit"
+            ReferencedContainer = "container:GalaxyKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
