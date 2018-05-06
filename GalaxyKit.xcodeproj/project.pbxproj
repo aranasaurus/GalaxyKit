@@ -7,17 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		942EFF9A1EE91E2C00F69123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942EFF921EE91E2C00F69123 /* AppDelegate.swift */; };
-		942EFF9B1EE91E2C00F69123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942EFF931EE91E2C00F69123 /* Assets.xcassets */; };
-		942EFF9C1EE91E2C00F69123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942EFF941EE91E2C00F69123 /* LaunchScreen.storyboard */; };
-		942EFF9D1EE91E2C00F69123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942EFF961EE91E2C00F69123 /* Main.storyboard */; };
-		942EFF9F1EE91E2C00F69123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942EFF991EE91E2C00F69123 /* ViewController.swift */; };
-		942EFFA61EE9233700F69123 /* GalaxyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942EFFA51EE9206400F69123 /* GalaxyKit.framework */; };
-		942EFFA71EE9233700F69123 /* GalaxyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 942EFFA51EE9206400F69123 /* GalaxyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94C938631C3CD87B0084FC0A /* StarClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C938621C3CD87B0084FC0A /* StarClassification.swift */; };
 		94C938651C3CD91E0084FC0A /* Galaxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C938641C3CD91E0084FC0A /* Galaxy.swift */; };
-		94DE5B891EEA318400B6012F /* StarGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489CB2D1C31DF070016E32B /* StarGeometry.swift */; };
-		94DE5B8A1EEA318A00B6012F /* SectorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D8AFDD1C325C040085D8E8 /* SectorScene.swift */; };
 		94E840371C2E34BF007196E6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840311C2E34BF007196E6 /* Coordinate.swift */; };
 		94E840391C2E34BF007196E6 /* Sector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840331C2E34BF007196E6 /* Sector.swift */; };
 		94E8403B1C2E34BF007196E6 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E840351C2E34BF007196E6 /* Star.swift */; };
@@ -27,13 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		942EFFA11EE91ED900F69123 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 946ED57C1C2E33F3004E03A3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 946ED5841C2E33F3004E03A3;
-			remoteInfo = GalaxyKit;
-		};
 		F9D01EB9209F6A06004DBBA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 946ED57C1C2E33F3004E03A3 /* Project object */;
@@ -43,52 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		942EFFA81EE9233700F69123 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				942EFFA71EE9233700F69123 /* GalaxyKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		942EFF921EE91E2C00F69123 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		942EFF931EE91E2C00F69123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		942EFF951EE91E2C00F69123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		942EFF971EE91E2C00F69123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		942EFF981EE91E2C00F69123 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		942EFF991EE91E2C00F69123 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		942EFFA01EE91E6F00F69123 /* GalaxyMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalaxyMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		942EFFA31EE91FB800F69123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		942EFFA51EE9206400F69123 /* GalaxyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GalaxyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9489CB2D1C31DF070016E32B /* StarGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarGeometry.swift; sourceTree = "<group>"; };
 		94C938621C3CD87B0084FC0A /* StarClassification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarClassification.swift; sourceTree = "<group>"; };
 		94C938641C3CD91E0084FC0A /* Galaxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galaxy.swift; sourceTree = "<group>"; };
-		94D8AFDD1C325C040085D8E8 /* SectorScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectorScene.swift; sourceTree = "<group>"; };
 		94E840311C2E34BF007196E6 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		94E840331C2E34BF007196E6 /* Sector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sector.swift; sourceTree = "<group>"; };
 		94E840351C2E34BF007196E6 /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTypes.swift; sourceTree = "<group>"; };
 		F9D01EB5209F6A06004DBBA6 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
 		F9D01EB7209F6A06004DBBA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9D01EEC209F7BE0004DBBA6 /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GalaxyKitTests.xctest; path = "/Users/ra1017/src/aranasaurus/GalaxyKit/build/Debug-iphoneos/GalaxyKitTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		942EFF5A1EE91D5600F69123 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				942EFFA61EE9233700F69123 /* GalaxyKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		946ED5811C2E33F3004E03A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,32 +59,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		942B6B101EE8E87800F07EEE /* samples */ = {
-			isa = PBXGroup;
-			children = (
-				942EFF911EE91E2C00F69123 /* Galaxy Machine */,
-			);
-			path = samples;
-			sourceTree = "<group>";
-		};
-		942EFF911EE91E2C00F69123 /* Galaxy Machine */ = {
-			isa = PBXGroup;
-			children = (
-				9477F4501C2E40F8006F004B /* sceneKit */,
-				942EFF921EE91E2C00F69123 /* AppDelegate.swift */,
-				942EFF931EE91E2C00F69123 /* Assets.xcassets */,
-				942EFF941EE91E2C00F69123 /* LaunchScreen.storyboard */,
-				942EFF961EE91E2C00F69123 /* Main.storyboard */,
-				942EFF981EE91E2C00F69123 /* Info.plist */,
-				942EFF991EE91E2C00F69123 /* ViewController.swift */,
-			);
-			path = "Galaxy Machine";
-			sourceTree = "<group>";
-		};
 		942EFFAB1EE9283800F69123 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				942EFFA01EE91E6F00F69123 /* GalaxyMachine.app */,
 				942EFFA51EE9206400F69123 /* GalaxyKit.framework */,
 			);
 			name = Products;
@@ -142,20 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				942EFFA31EE91FB800F69123 /* Info.plist */,
-				942B6B101EE8E87800F07EEE /* samples */,
 				94E8403D1C2E356D007196E6 /* src */,
 				F9D01EB4209F6A06004DBBA6 /* GalaxyKitTests */,
 				942EFFAB1EE9283800F69123 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		9477F4501C2E40F8006F004B /* sceneKit */ = {
-			isa = PBXGroup;
-			children = (
-				9489CB2F1C31E49D0016E32B /* geometry */,
-				94D8AFDD1C325C040085D8E8 /* SectorScene.swift */,
-			);
-			path = sceneKit;
 			sourceTree = "<group>";
 		};
 		9477F4531C2E4204006F004B /* util */ = {
@@ -165,14 +84,6 @@
 				94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */,
 			);
 			path = util;
-			sourceTree = "<group>";
-		};
-		9489CB2F1C31E49D0016E32B /* geometry */ = {
-			isa = PBXGroup;
-			children = (
-				9489CB2D1C31DF070016E32B /* StarGeometry.swift */,
-			);
-			path = geometry;
 			sourceTree = "<group>";
 		};
 		94E8403D1C2E356D007196E6 /* src */ = {
@@ -209,25 +120,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		942EFF5C1EE91D5600F69123 /* GalaxyMachine */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 942EFF841EE91D5600F69123 /* Build configuration list for PBXNativeTarget "GalaxyMachine" */;
-			buildPhases = (
-				942EFF591EE91D5600F69123 /* Sources */,
-				942EFF5A1EE91D5600F69123 /* Frameworks */,
-				942EFF5B1EE91D5600F69123 /* Resources */,
-				942EFFA81EE9233700F69123 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				942EFFA21EE91ED900F69123 /* PBXTargetDependency */,
-			);
-			name = GalaxyMachine;
-			productName = GalaxyMachine;
-			productReference = 942EFFA01EE91E6F00F69123 /* GalaxyMachine.app */;
-			productType = "com.apple.product-type.application";
-		};
 		946ED5841C2E33F3004E03A3 /* GalaxyKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 946ED5991C2E33F3004E03A3 /* Build configuration list for PBXNativeTarget "GalaxyKit" */;
@@ -261,7 +153,6 @@
 			);
 			name = GalaxyKitTests;
 			productName = GalaxyKitTests;
-			productReference = F9D01EEC209F7BE0004DBBA6 /* GalaxyKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -274,11 +165,6 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Aranasaurus;
 				TargetAttributes = {
-					942EFF5C1EE91D5600F69123 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = JCYYKWU6KX;
-						LastSwiftMigration = 0930;
-					};
 					946ED5841C2E33F3004E03A3 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = JCYYKWU6KX;
@@ -305,23 +191,12 @@
 			projectRoot = "";
 			targets = (
 				946ED5841C2E33F3004E03A3 /* GalaxyKit */,
-				942EFF5C1EE91D5600F69123 /* GalaxyMachine */,
 				F9D01EB2209F6A06004DBBA6 /* GalaxyKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		942EFF5B1EE91D5600F69123 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				942EFF9D1EE91E2C00F69123 /* Main.storyboard in Resources */,
-				942EFF9B1EE91E2C00F69123 /* Assets.xcassets in Resources */,
-				942EFF9C1EE91E2C00F69123 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		946ED5831C2E33F3004E03A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,17 +214,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		942EFF591EE91D5600F69123 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				942EFF9F1EE91E2C00F69123 /* ViewController.swift in Sources */,
-				942EFF9A1EE91E2C00F69123 /* AppDelegate.swift in Sources */,
-				94DE5B8A1EEA318A00B6012F /* SectorScene.swift in Sources */,
-				94DE5B891EEA318400B6012F /* StarGeometry.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		946ED5801C2E33F3004E03A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,11 +238,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		942EFFA21EE91ED900F69123 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 946ED5841C2E33F3004E03A3 /* GalaxyKit */;
-			targetProxy = 942EFFA11EE91ED900F69123 /* PBXContainerItemProxy */;
-		};
 		F9D01EBA209F6A06004DBBA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 946ED5841C2E33F3004E03A3 /* GalaxyKit */;
@@ -386,84 +245,7 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		942EFF941EE91E2C00F69123 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				942EFF951EE91E2C00F69123 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		942EFF961EE91E2C00F69123 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				942EFF971EE91E2C00F69123 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		942EFF851EE91D5600F69123 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JCYYKWU6KX;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/samples/Galaxy Machine/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyMachine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		942EFF861EE91D5600F69123 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = JCYYKWU6KX;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/samples/Galaxy Machine/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aranasaurus.GalaxyMachine;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		946ED5971C2E33F3004E03A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -661,15 +443,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		942EFF841EE91D5600F69123 /* Build configuration list for PBXNativeTarget "GalaxyMachine" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				942EFF851EE91D5600F69123 /* Debug */,
-				942EFF861EE91D5600F69123 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		946ED57F1C2E33F3004E03A3 /* Build configuration list for PBXProject "GalaxyKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
