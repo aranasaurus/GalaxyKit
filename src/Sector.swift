@@ -5,7 +5,7 @@ public class Sector {
     public let y: UInt
     public let stars: [Star]
     
-    public init(_ x: UInt, _ y: UInt, numStars: UInt) {
+    public init(_ x: UInt, _ y: UInt, numStars: UInt, sectorSize: Int) {
         self.x = x
         self.y = y
         
@@ -22,7 +22,7 @@ public class Sector {
         
         var stars = [Star]()
         for _ in 0..<numStars {
-            stars.append(Star(randomSource: starSource, coordinate: Coordinate(randomSource: coordSource)))
+            stars.append(Star(randomSource: starSource, coordinate: Coordinate(randomSource: coordSource, sectorSize: sectorSize)))
         }
         self.stars = stars
     }

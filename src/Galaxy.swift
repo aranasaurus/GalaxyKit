@@ -11,6 +11,7 @@ import GameplayKit
 
 public class Galaxy {
     let densityMap: [UInt]
+    let sectorSize: Int
     
     public var continueGeneratingBeyondMap = false
     // All of this density stuff will only be used if `continueGeneratingBeyondMap` is `true` and a sector is requested outside the densityMap.
@@ -23,8 +24,9 @@ public class Galaxy {
         return distribution
     }()
 
-    public init(densityMap: [UInt] = [], continueGeneratingBeyondMap: Bool = false) {
+    public init(densityMap: [UInt] = [], sectorSize: Int, continueGeneratingBeyondMap: Bool = false) {
         self.densityMap = densityMap
+        self.sectorSize = sectorSize
         self.continueGeneratingBeyondMap = continueGeneratingBeyondMap
     }
 
@@ -40,9 +42,9 @@ public class Galaxy {
         let index = Int(x + y)
 
         guard index >= densityMap.count else {
-            return Sector(x, y, numStars: densityMap[index])
+            return Sector(x, y, numStars: densityMap[index], sectorSize: sectorSize)
         }
 
-        return continueGeneratingBeyondMap ? Sector(x, y, numStars: UInt(self.densityDistribution.nextInt())) : nil
+        return continueGeneratingBeyondMap ? Sector(x, y, numStars: UInt(self.densityDistribution.nextInt()), sectorSize: sectorSize) : nil
     }
 }

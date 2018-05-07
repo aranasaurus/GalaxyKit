@@ -1,7 +1,5 @@
 import GameplayKit
 
-private let sectorSize = 256
-
 public struct Coordinate {
     public let x: Int
     public let y: Int
@@ -9,7 +7,7 @@ public struct Coordinate {
     
     public static let zero = Coordinate(x: 0, y: 0, z: 0)
     
-    public init(randomSource: GKRandomSource) {
+    public init(randomSource: GKRandomSource, sectorSize: Int) {
         self.x = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
         self.y = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
         self.z = randomSource.nextInt(upperBound: sectorSize) - (sectorSize/2)
