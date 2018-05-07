@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9D01EB2209F6A06004DBBA6"
-               BuildableName = "GalaxyKitTests"
+               BlueprintIdentifier = "F96E1B0A20A01CDC00E915A7"
+               BuildableName = "GalaxyKitTests.xctest"
                BlueprintName = "GalaxyKitTests"
                ReferencedContainer = "container:GalaxyKit.xcodeproj">
             </BuildableReference>

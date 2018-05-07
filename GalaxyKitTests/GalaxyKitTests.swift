@@ -12,7 +12,7 @@ import XCTest
 
 class GalaxyKitTests: XCTestCase {
     func testGalaxyDensityMap() {
-        let galaxy = Galaxy(densityMap: [1,2,3], continueGeneratingBeyondMap: false)
+        let galaxy = Galaxy(densityMap: [1,2,3], sectorSize: 256, continueGeneratingBeyondMap: false)
         XCTAssertEqual(galaxy.sector(at: 0, 0)?.stars.count, 1)
         XCTAssertEqual(galaxy.sector(at: 0, 1)?.stars.count, 2)
         XCTAssertEqual(galaxy.sector(at: 0, 2)?.stars.count, 3)

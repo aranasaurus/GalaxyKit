@@ -4,4 +4,11 @@
    <FileRef
       location = "group:GalaxyKit.xcodeproj">
    </FileRef>
+   <Group
+      location = "container:"
+      name = "samples">
+      <FileRef
+         location = "group:samples/GalaxyMachine/GalaxyMachine.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>
