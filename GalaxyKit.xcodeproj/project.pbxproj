@@ -38,7 +38,7 @@
 		94EB4F8B1C33A7DF00170FBB /* UnitTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTypes.swift; sourceTree = "<group>"; };
 		F96E1B0D20A01CDC00E915A7 /* GalaxyKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyKitTests.swift; sourceTree = "<group>"; };
 		F96E1B0F20A01CDC00E915A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9E1CDD520A01F6C00B46DDC /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GalaxyKitTests.xctest; path = "/Users/ra1017/src/aranasaurus/GalaxyKit/build/Debug-iphoneos/GalaxyKitTests.xctest"; sourceTree = "<absolute>"; };
+		FB77281226C31188001570DA /* GalaxyKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GalaxyKitTests.xctest; path = "/Users/aranasaurus/src/aranasaurus/GalaxyKit/build/Debug-iphoneos/GalaxyKitTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 			);
 			name = GalaxyKitTests;
 			productName = GalaxyKitTests;
-			productReference = F9E1CDD520A01F6C00B46DDC /* GalaxyKitTests.xctest */;
+			productReference = FB77281226C31188001570DA /* GalaxyKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -184,6 +184,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
