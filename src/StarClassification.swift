@@ -12,7 +12,7 @@ public extension Star {
     /**
      The classification of a star. Based primarily on [this wikipedia page](https://en.wikipedia.org/wiki/Stellar_classification#Harvard_spectral_classification).
      */
-    public enum Classification: Int {
+    enum Classification: Int {
         case o
         case b
         case a
