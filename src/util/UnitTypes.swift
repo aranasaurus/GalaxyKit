@@ -16,13 +16,13 @@ public typealias Luminosity = Measurement<UnitRadiantFlux>
 private let solarRadiiPerAU: Double = 215
 
 public extension Measurement {
-    public static func measurement(at percentage: Double, of range: ClosedRange<Measurement<UnitType>>) -> Measurement<UnitType> {
+    static func measurement(at percentage: Double, of range: ClosedRange<Measurement<UnitType>>) -> Measurement<UnitType> {
         let span = range.upperBound - range.lowerBound
         return range.lowerBound + (span * percentage)
     }
 }
 public extension Measurement where UnitType : Dimension {
-    public func `in`(_ otherUnit: UnitType) -> Double {
+    func `in`(_ otherUnit: UnitType) -> Double {
         return converted(to: otherUnit).value
     }
 }
@@ -33,7 +33,7 @@ public extension UnitMass {
      Equal to the mass of the Sun, about two nonillion kilograms.
      Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_mass).
     */
-    public static var solarMass: UnitMass {
+    static var solarMass: UnitMass {
         return UnitMass(symbol: "M☉", converter: UnitConverterLinear(coefficient: 1.98855e30))
     }
 }
@@ -44,7 +44,7 @@ public extension UnitLength {
      Equal to the current radius of the Sun (aka: 6.955 x 10^5).
      Check it out on [wikipedia](https://en.wikipedia.org/wiki/Solar_radius).
     */
-    public static var solarRadii: UnitLength {
+    static var solarRadii: UnitLength {
         return UnitLength(symbol: "R☉", converter: UnitConverterLinear(coefficient: 6.957e8))
     }
 }
